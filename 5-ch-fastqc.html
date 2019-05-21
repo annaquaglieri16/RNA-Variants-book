@@ -136,11 +136,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="2-ch-download.html"><a href="2-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>2.1</b> Get SRX sample names</a></li>
 <li class="chapter" data-level="2.2" data-path="2-ch-download.html"><a href="2-ch-download.html#create-ncbi-query"><i class="fa fa-check"></i><b>2.2</b> Create NCBI query</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-ch-downsample.html"><a href="3-ch-downsample.html"><i class="fa fa-check"></i><b>3</b> Downsampling FASTQ files</a></li>
+<li class="chapter" data-level="3" data-path="3-ch-downsample.html"><a href="3-ch-downsample.html"><i class="fa fa-check"></i><b>3</b> Downsampling FASTQ or BAM files</a></li>
 <li class="chapter" data-level="4" data-path="4-ch-input-pipe.html"><a href="4-ch-input-pipe.html"><i class="fa fa-check"></i><b>4</b> Define files and programs needed for the pipeline</a></li>
 <li class="chapter" data-level="5" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html"><i class="fa fa-check"></i><b>5</b> FASTQC and adapters trimming</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#parallelise-your-fastqc"><i class="fa fa-check"></i><b>5.1</b> Parallelise your <code>FASTQC</code></a></li>
 <li class="chapter" data-level="5.2" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#summarise-reports-with-multiqc"><i class="fa fa-check"></i><b>5.2</b> Summarise reports with <code>MultiQC</code></a></li>
+<li class="chapter" data-level="5.3" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#adapter-contamination-troubles-star-vs-subread"><i class="fa fa-check"></i><b>5.3</b> Adapter contamination troubles: STAR vs Subread</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-ch-align.html"><a href="6-ch-align.html"><i class="fa fa-check"></i><b>6</b> Alignement, Read Groups, Mark duplicates</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-ch-align.html"><a href="6-ch-align.html#create-star-index"><i class="fa fa-check"></i><b>6.1</b> Create <code>STAR</code> index</a></li>
@@ -195,15 +196,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="parallelise-your-fastqc" class="section level2">
 <h2><span class="header-section-number">5.1</span> Parallelise your <code>FASTQC</code></h2>
 <p>This is just one example to run <code>fastqc</code> on several FASTQ files using <code>parallel</code> <span class="citation">(Tange, <a href="13-ch-refer.html#ref-Tange_undated-th">n.d.</a>)</span>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">find</span> ../data -name <span class="st">&quot;*.fastq.gz&quot;</span> <span class="op">&gt;</span> ../data/fastq_files.txt
-<span class="fu">cat</span> ../data/fastq_files.txt <span class="kw">|</span> <span class="ex">parallel</span> -j 2 <span class="st">&quot;fastqc {} --outdir ../data&quot;</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">find</span> ./data -name <span class="st">&quot;*.fastq.gz&quot;</span> <span class="op">&gt;</span> ./data/fastq_files.txt
+<span class="fu">cat</span> ./data/fastq_files.txt <span class="kw">|</span> <span class="ex">parallel</span> -j 2 <span class="st">&quot;fastqc {} --outdir ./data&quot;</span></code></pre>
 </div>
 <div id="summarise-reports-with-multiqc" class="section level2">
 <h2><span class="header-section-number">5.2</span> Summarise reports with <code>MultiQC</code></h2>
-<p>I strongly suggest to have a look at <a href="http://multiqc.info/">MultiQC</a> <span class="citation">(Ewels et al. <a href="13-ch-refer.html#ref-Ewels2016-rc">2016</a>)</span> which allows you to combine together the results of multiple samples into one compact document. You can check the programs whose output is supported by <code>MultiQC</code>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ../data/ --interactive -n <span class="st">&quot;FASTQC_summary&quot;</span> -o ../data/</code></pre>
+<p>I strongly suggest to have a look at <a href="http://multiqc.info/">MultiQC</a> <span class="citation">(Ewels et al. <a href="13-ch-refer.html#ref-Ewels2016-rc">2016</a>)</span> which allows you to combine together the results of multiple samples into one compact document. You can check the programs whose output is supported by <code>MultiQC</code> (loads!!).</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ./data/ --interactive -n <span class="st">&quot;FASTQC_summary&quot;</span> -o ./data/</code></pre>
 <p>The <code>FASTQC</code> reports offer a variety of measures and one can decide about discarding some samples or doing some adapter trimming if necessary. <a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a> and <a href="https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim Galore!</a> can be used for this purpose.</p>
-<p>I suggest looking at one of my previous analyses around <a href="https://github.com/annaquaglieri16/RNA-Seq-and-adapters--STAR-vs-Subjunc">adapters with STAR and Subread</a> since adapters can cause serious troubles with <code>STAR</code> default settings! Regarding this I strongly suggest to look at the fragment size distribution across samples once you have aligned your fatsq files. Unusual behaviour can help you spot problems with adapters/alignment steps, which I highlighted in this <a href="https://github.com/annaquaglieri16/RNA-Seq-and-adapters--STAR-vs-Subjunc">post</a>. I normally use the <a href="https://broadinstitute.github.io/picard/command-line-overview.html">CollectMultipleMetrics</a> to extract fragment sizes from PE bamfiles. See Section @(sec:post-align) for more details.</p>
+</div>
+<div id="adapter-contamination-troubles-star-vs-subread" class="section level2">
+<h2><span class="header-section-number">5.3</span> Adapter contamination troubles: STAR vs Subread</h2>
+<p>I suggest looking at one of my previous analyses around <a href="https://github.com/annaquaglieri16/RNA-Seq-and-adapters--STAR-vs-Subjunc">adapters with STAR and Subread</a> since adapters can cause serious troubles with <code>STAR</code> default settings! Regarding this I strongly suggest to look at the fragment size distribution across samples once you have aligned your fatsq files. Unusual behaviour can help you spot problems with adapters/alignment steps, which I highlighted in the post. I normally use the <a href="https://broadinstitute.github.io/picard/command-line-overview.html">CollectMultipleMetrics</a> to extract fragment sizes from Paired End (PE) bamfiles. See Section <a href="6-ch-align.html#sec:post-align">6.4</a> for more details.</p>
 
 </div>
 </div>

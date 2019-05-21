@@ -136,11 +136,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="2-ch-download.html"><a href="2-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>2.1</b> Get SRX sample names</a></li>
 <li class="chapter" data-level="2.2" data-path="2-ch-download.html"><a href="2-ch-download.html#create-ncbi-query"><i class="fa fa-check"></i><b>2.2</b> Create NCBI query</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-ch-downsample.html"><a href="3-ch-downsample.html"><i class="fa fa-check"></i><b>3</b> Downsampling FASTQ files</a></li>
+<li class="chapter" data-level="3" data-path="3-ch-downsample.html"><a href="3-ch-downsample.html"><i class="fa fa-check"></i><b>3</b> Downsampling FASTQ or BAM files</a></li>
 <li class="chapter" data-level="4" data-path="4-ch-input-pipe.html"><a href="4-ch-input-pipe.html"><i class="fa fa-check"></i><b>4</b> Define files and programs needed for the pipeline</a></li>
 <li class="chapter" data-level="5" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html"><i class="fa fa-check"></i><b>5</b> FASTQC and adapters trimming</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#parallelise-your-fastqc"><i class="fa fa-check"></i><b>5.1</b> Parallelise your <code>FASTQC</code></a></li>
 <li class="chapter" data-level="5.2" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#summarise-reports-with-multiqc"><i class="fa fa-check"></i><b>5.2</b> Summarise reports with <code>MultiQC</code></a></li>
+<li class="chapter" data-level="5.3" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#adapter-contamination-troubles-star-vs-subread"><i class="fa fa-check"></i><b>5.3</b> Adapter contamination troubles: STAR vs Subread</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-ch-align.html"><a href="6-ch-align.html"><i class="fa fa-check"></i><b>6</b> Alignement, Read Groups, Mark duplicates</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-ch-align.html"><a href="6-ch-align.html#create-star-index"><i class="fa fa-check"></i><b>6.1</b> Create <code>STAR</code> index</a></li>
@@ -190,10 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ch:input-pipe" class="section level1">
 <h1><span class="header-section-number">4</span> Define files and programs needed for the pipeline</h1>
-<ul>
-<li>The reference genome <strong>hg19</strong> is used for this analysis.</li>
-<li>Below are all the programs and versions used</li>
-</ul>
+<p>The reference genome <strong>hg19</strong> is used for this analysis.
+Below are all the programs and versions used</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load STAR/2.5.2
 <span class="ex">module</span> load R/3.4.3
 <span class="ex">module</span> load anaconda2/4.0.0
@@ -208,10 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="ex">module</span> load vardict/1.5.1
 <span class="ex">module</span> load freebayes/1.1.0
 <span class="ex">module</span> load picard-tools/2.9.4</code></pre>
-<ul>
-<li>The genome references and annotations used here have been downloaded from <a href="https://support.illumina.com/sequencing/sequencing_software/igenome.html">iGenome website</a></li>
-</ul>
-<p>Below is an example of how to setup a few line of <code>bash</code> to assign directory names.</p>
+<p>The genome references and annotations used here have been downloaded from <a href="https://support.illumina.com/sequencing/sequencing_software/igenome.html">iGenome website</a></p>
+<p>Below is an example of how to setup a few line of <code>bash script</code> to assign directory names to variables.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Hard link to genome.fa of the reference genome </span>
 <span class="va">genome_fasta=</span>path_to_hg19_genome_directory/genome.fa
 <span class="co"># Hard link to gene.gtf where gene annotation is stored</span>

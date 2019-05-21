@@ -136,11 +136,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="2-ch-download.html"><a href="2-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>2.1</b> Get SRX sample names</a></li>
 <li class="chapter" data-level="2.2" data-path="2-ch-download.html"><a href="2-ch-download.html#create-ncbi-query"><i class="fa fa-check"></i><b>2.2</b> Create NCBI query</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-ch-downsample.html"><a href="3-ch-downsample.html"><i class="fa fa-check"></i><b>3</b> Downsampling FASTQ files</a></li>
+<li class="chapter" data-level="3" data-path="3-ch-downsample.html"><a href="3-ch-downsample.html"><i class="fa fa-check"></i><b>3</b> Downsampling FASTQ or BAM files</a></li>
 <li class="chapter" data-level="4" data-path="4-ch-input-pipe.html"><a href="4-ch-input-pipe.html"><i class="fa fa-check"></i><b>4</b> Define files and programs needed for the pipeline</a></li>
 <li class="chapter" data-level="5" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html"><i class="fa fa-check"></i><b>5</b> FASTQC and adapters trimming</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#parallelise-your-fastqc"><i class="fa fa-check"></i><b>5.1</b> Parallelise your <code>FASTQC</code></a></li>
 <li class="chapter" data-level="5.2" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#summarise-reports-with-multiqc"><i class="fa fa-check"></i><b>5.2</b> Summarise reports with <code>MultiQC</code></a></li>
+<li class="chapter" data-level="5.3" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#adapter-contamination-troubles-star-vs-subread"><i class="fa fa-check"></i><b>5.3</b> Adapter contamination troubles: STAR vs Subread</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-ch-align.html"><a href="6-ch-align.html"><i class="fa fa-check"></i><b>6</b> Alignement, Read Groups, Mark duplicates</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-ch-align.html"><a href="6-ch-align.html#create-star-index"><i class="fa fa-check"></i><b>6.1</b> Create <code>STAR</code> index</a></li>
@@ -190,31 +191,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ch:download" class="section level1">
 <h1><span class="header-section-number">2</span> Download RNA-Seq data from GEO</h1>
-<p>We will provide an example on how to download data from GEO using the Leucegene CBF-AML RNS-Seq data uploaded at <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642" class="uri">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642</a>.
-The first step in dowloading data from GEO is to download the <code>SRA</code> files. For that we need to get <code>SRX</code> entries which each one corresponds to a sample in the RNA-Seq cohort.</p>
+<p>Here is an example on how to download data from <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO</a> using the Leucegene CBF-AML RNA-Seq data uploaded at <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642" class="uri">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642</a>.
+The first step in dowloading data from GEO is to download the <code>SRA</code> files. For that, we need to first get the <code>SRX</code> entries where each one corresponds to a specific sample in the RNA-Seq cohort. Usually, publications provide <strong>accession numbers</strong> which are used to looup data available online. At every accession number one can find several <code>SRX</code> files. Below is an example using one accession number from the <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642">Leucegene data</a>.</p>
 <div id="get-srx-sample-names" class="section level2">
 <h2><span class="header-section-number">2.1</span> Get SRX sample names</h2>
+<p>The <code>GEOquery</code> package can be used to extract <code>SRX</code> files linked to an accession number.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(GEOquery)
 <span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(knitr)
 <span class="kw">library</span>(stringr)</code></pre>
-<p>Below is an example using one accession number from the <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642">Leucegene data</a>.</p>
+<p>Below the accession number <strong>GSE49642</strong> is used as example.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get matrix files for every accession number</span>
 series_matrix_info &lt;-<span class="st"> </span><span class="cf">function</span>(gse){
 gsed &lt;-<span class="st"> </span><span class="kw">getGEO</span>(gse,<span class="dt">GSEMatrix=</span><span class="ot">TRUE</span>)
 gse.mat &lt;-<span class="st"> </span><span class="kw">pData</span>(<span class="kw">phenoData</span>(gsed[[<span class="dv">1</span>]]))
 reduced &lt;-<span class="st"> </span>gse.mat[,<span class="kw">c</span>(<span class="st">&quot;title&quot;</span>,<span class="st">&quot;geo_accession&quot;</span>,<span class="st">&quot;relation.1&quot;</span>)]
-<span class="kw">write.csv</span>(reduced,<span class="kw">file.path</span>(<span class="st">&quot;../data&quot;</span>,<span class="kw">paste</span>(gse,<span class="st">&quot;_&quot;</span>,<span class="kw">nrow</span>(gse.mat),<span class="st">&quot;.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)),<span class="dt">row.names =</span> <span class="ot">FALSE</span>)
+<span class="kw">write.csv</span>(reduced,<span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>,<span class="kw">paste</span>(gse,<span class="st">&quot;_&quot;</span>,<span class="kw">nrow</span>(gse.mat),<span class="st">&quot;.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)),<span class="dt">row.names =</span> <span class="ot">FALSE</span>)
 }
 
 <span class="kw">series_matrix_info</span>(<span class="st">&quot;GSE49642&quot;</span>) <span class="co"># 43 samples</span></code></pre>
-<p>Every row in Table <a href="2-ch-download.html#tab:SRX">2.1</a> contains sample names (<code>title</code>) and <code>GSM</code> accession numbers. In order to download a particular sample we need the <code>SRA</code> terms which are the names starting with: <code>SRX***</code> in the <code>relation.1</code> column. The structure of the matrix might change across different studies but you should be able to find <code>SRX</code> entries hidden somewhere in the <code>GSEMatrix</code>!</p>
+<p>Every row in Table <a href="2-ch-download.html#tab:SRX">2.1</a> contains sample names (<code>title</code>) and <code>GSM</code> numbers. In order to download a particular sample we need the <code>SRA</code> terms which are the names starting with: <code>SRX***</code> in the <code>relation.1</code> column. The structure of the matrix might change across different studies but you should be able to find <code>SRX</code> entries hidden somewhere in the <code>GSEMatrix</code>!</p>
 <pre class="sourceCode r"><code class="sourceCode r">matrix_file &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>),<span class="dt">pattern =</span> <span class="st">&quot;GSE&quot;</span>,<span class="dt">full.names =</span> <span class="ot">TRUE</span>)
 GSEmatrix &lt;-<span class="st"> </span><span class="kw">read_csv</span>(matrix_file)
 
-<span class="kw">kable</span>(GSEmatrix[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,],<span class="dt">caption=</span><span class="st">&quot;SRX sample names.&quot;</span>)</code></pre>
+<span class="kw">kable</span>(GSEmatrix[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,],<span class="dt">caption=</span><span class="st">&quot;SRX sample names linked to the accession number GSE49642.&quot;</span>)</code></pre>
 <table>
-<caption><span id="tab:SRX">Table 2.1: </span>SRX sample names.</caption>
+<caption><span id="tab:SRX">Table 2.1: </span>SRX sample names linked to the accession number GSE49642.</caption>
 <thead>
 <tr class="header">
 <th align="left">title</th>
