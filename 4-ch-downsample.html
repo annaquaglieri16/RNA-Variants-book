@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>From FASTQ files to Variant Calling for RNA-Seq</title>
-  <meta name="description" content="From FASTQ files to Variant Calling for RNA-Seq">
+  <title>4 Downsampling FASTQ files | From FASTQ files to Variant Calling for RNA-Seq</title>
+  <meta name="description" content="4 Downsampling FASTQ files | From FASTQ files to Variant Calling for RNA-Seq">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta property="og:title" content="4 Downsampling FASTQ files | From FASTQ files to Variant Calling for RNA-Seq" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta name="twitter:title" content="4 Downsampling FASTQ files | From FASTQ files to Variant Calling for RNA-Seq" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-overview.html">
+<link rel="prev" href="3-ch-download.html">
+<link rel="next" href="5-ch-input-pipe.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -187,29 +187,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">From FASTQ files to Variant Calling for RNA-Seq</h1>
-<p class="author"><em>Anna Quaglieri</em></p>
-</div>
-<div id="ch:setup" class="section level1">
-<h1><span class="header-section-number">1</span> Setup</h1>
-<p>This is an example workflow from <code>SRR</code> files to Variant calling using modular functions written in <code>R</code> and <code>bash</code>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone git@github.com:annaquaglieri16/RNA-seq-variant-calling.git</code></pre>
-<p>All the functions used for the variant calling and downsampling pipeline are inside the <code>./functions</code> folder.</p>
-<ul>
-<li>If you want to download sample <code>FASTQ</code> files or learn how to download <code>FASTQ</code> files from GEO go to Section <a href="3-ch-download.html#ch:download">3</a>.</li>
-<li>If you already have the <code>FASTQ</code> files and YOU WANT TO randomly downsample your samples to a fix number of reads go to Section <a href="4-ch-downsample.html#ch:downsample">4</a>.</li>
-<li>If you already have the <code>FASTQ</code> files and you don’t need to perform quality control or downsampl your files go to Section <a href="7-ch-align.html#ch:align">7</a>.</li>
-<li>If you already have the <code>BAM</code> files and you want to call variants go to Section <a href="9-ch-gatk-prep.html#ch:gatk-prep">9</a>.</li>
-</ul>
+<div id="ch:downsample" class="section level1">
+<h1><span class="header-section-number">4</span> Downsampling FASTQ files</h1>
+<p>The <a href="https://github.com/lh3/seqtk">seqtk</a> tool can be used to downsample an exact number of reads from paired end (PE) FASTQ files. The following is an example run</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">path-to-seqtk-folder/seqtk</span> sample -s100 test_data/SRR1608610_1.fastq.gz 10000 <span class="op">&gt;</span> test_data/sub_SRR1608610_1.fq
+<span class="ex">path-to-seqtk-folder/seqtk</span> sample -s100 test_data/SRR1608610_2.fastq.gz 10000 <span class="op">&gt;</span> test_data/sub_SRR1608610_2.fq</code></pre>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-ch-download.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-ch-input-pipe.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -239,7 +230,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/index.Rmd",
+"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/03-Downsample.Rmd",
 "text": "Edit"
 },
 "history": {

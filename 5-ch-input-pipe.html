@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>From FASTQ files to Variant Calling for RNA-Seq</title>
-  <meta name="description" content="From FASTQ files to Variant Calling for RNA-Seq">
+  <title>5 Define files and programs needed for the pipeline | From FASTQ files to Variant Calling for RNA-Seq</title>
+  <meta name="description" content="5 Define files and programs needed for the pipeline | From FASTQ files to Variant Calling for RNA-Seq">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta property="og:title" content="5 Define files and programs needed for the pipeline | From FASTQ files to Variant Calling for RNA-Seq" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta name="twitter:title" content="5 Define files and programs needed for the pipeline | From FASTQ files to Variant Calling for RNA-Seq" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="2-overview.html">
+<link rel="prev" href="4-ch-downsample.html">
+<link rel="next" href="6-ch-fastqc.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -187,29 +187,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">From FASTQ files to Variant Calling for RNA-Seq</h1>
-<p class="author"><em>Anna Quaglieri</em></p>
-</div>
-<div id="ch:setup" class="section level1">
-<h1><span class="header-section-number">1</span> Setup</h1>
-<p>This is an example workflow from <code>SRR</code> files to Variant calling using modular functions written in <code>R</code> and <code>bash</code>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone git@github.com:annaquaglieri16/RNA-seq-variant-calling.git</code></pre>
-<p>All the functions used for the variant calling and downsampling pipeline are inside the <code>./functions</code> folder.</p>
+<div id="ch:input-pipe" class="section level1">
+<h1><span class="header-section-number">5</span> Define files and programs needed for the pipeline</h1>
 <ul>
-<li>If you want to download sample <code>FASTQ</code> files or learn how to download <code>FASTQ</code> files from GEO go to Section <a href="3-ch-download.html#ch:download">3</a>.</li>
-<li>If you already have the <code>FASTQ</code> files and YOU WANT TO randomly downsample your samples to a fix number of reads go to Section <a href="4-ch-downsample.html#ch:downsample">4</a>.</li>
-<li>If you already have the <code>FASTQ</code> files and you don’t need to perform quality control or downsampl your files go to Section <a href="7-ch-align.html#ch:align">7</a>.</li>
-<li>If you already have the <code>BAM</code> files and you want to call variants go to Section <a href="9-ch-gatk-prep.html#ch:gatk-prep">9</a>.</li>
+<li>The reference genome <strong>hg19</strong> is used for this analysis.</li>
+<li>Below are all the programs and versions used</li>
 </ul>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load STAR/2.5.2
+<span class="ex">module</span> load R/3.4.3
+<span class="ex">module</span> load anaconda2/4.0.0
+<span class="ex">module</span> load sambamba/0.6.6
+<span class="ex">module</span> load picard-tools/2.9.4
+<span class="ex">module</span> load gatk/3.7.0
+<span class="ex">module</span> load varscan/2.3.9
+<span class="ex">module</span> load vcftools/0.1.13
+<span class="ex">module</span> load samtools/1.6
+<span class="ex">module</span> load ensembl-vep/89.0
+<span class="ex">module</span> load vcflib/1.0.0-rc1
+<span class="ex">module</span> load vardict/1.5.1
+<span class="ex">module</span> load freebayes/1.1.0
+<span class="ex">module</span> load picard-tools/2.9.4</code></pre>
+<ul>
+<li>The genome references and annotations used here have been downloaded from <a href="https://support.illumina.com/sequencing/sequencing_software/igenome.html">iGenome website</a></li>
+</ul>
+<p>Below is an example of how to setup a few line of <code>bash</code> to assign directory names.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Hard link to genome.fa of the reference genome </span>
+<span class="va">genome_fasta=</span>path_to_hg19_genome_directory/genome.fa
+<span class="co"># Hard link to gene.gtf where gene annotation is stored</span>
+<span class="va">gtf=</span>path_to_hg19_gtf_directory/genes.gtf</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Functions directories</span>
+<span class="va">workdir=</span>../functions
+
+<span class="co"># STAR folders for one-pass, two-pass and merged output</span>
+<span class="va">star_1pass=</span>../results/aligned_star1
+<span class="va">star_2pass=</span>../results/aligned_star2
+<span class="va">star_merged=</span>../results/star_merged_runs <span class="co"># Every sample comes in different SRR runs which will have to be merged in one SRX sample.</span></code></pre>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="2-overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="4-ch-downsample.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="6-ch-fastqc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -239,7 +260,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/index.Rmd",
+"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/04-Input-pipe.Rmd",
 "text": "Edit"
 },
 "history": {
