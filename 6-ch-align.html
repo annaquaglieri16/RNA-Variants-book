@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -103,7 +129,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.1</b> Disclaimer</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.2</b> Disclaimer</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-ch-download.html"><a href="2-ch-download.html"><i class="fa fa-check"></i><b>2</b> Download RNA-Seq data from GEO</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-ch-download.html"><a href="2-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>2.1</b> Get SRX sample names</a></li>
@@ -140,6 +167,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html"><i class="fa fa-check"></i><b>12</b> Analyse time-course mutations with superFreq</a><ul>
 <li class="chapter" data-level="12.1" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>12.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="13-ch-refer.html"><a href="13-ch-refer.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></li>
 
@@ -166,18 +194,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="create-star-index" class="section level2">
 <h2><span class="header-section-number">6.1</span> Create <code>STAR</code> index</h2>
 <p>STAR requires to build an index for the reference genome that will be used in the analignment and fusion calling step.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Iniaitlise Genome directory where to save STAR Index and STAR Fusion Index folders</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Iniaitlise Genome directory where to save STAR Index and STAR Fusion Index folders</span>
 <span class="va">star_genome100=</span>path_to_genome_directory/star_index_hg19_99
-<span class="fu">mkdir</span> -p <span class="va">${star_genome100}</span></code></pre></div>
-<p>To build the <em>STAR index</em> one needs to provide the FASTA file for the reference genome used, a GTF file with information aabout the annotation and STAR also require an an extra parameter called <code>sjdbOverhang</code> which is usually set to be <em>(read length - 1)</em>. See <code>STAR</code> documentation for <strong>Generating genome indexes</strong> in the <a href="https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf">STAR manual</a> - 99 is (read length - 1) relative to the samples that I was working with.</p>
+<span class="fu">mkdir</span> -p <span class="va">${star_genome100}</span></code></pre>
+<p>To build the <em>STAR index</em> one needs to provide the FASTA file for the reference genome used, a GTF file with information aabout the annotation and STAR also require an an extra parameter called <code>sjdbOverhang</code> which is usually set to be <em>(read length - 1)</em>. See <code>STAR</code> documentation for <strong>Generating genome indexes</strong> in the <a href="https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf">STAR manual</a>
+- 99 is (read length - 1) relative to the samples that I was working with.</p>
 <p>Below is a wrapper for <code>STAR</code> call to build an index.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">outpud_dir=</span>../results
-<span class="ex">../functions/build_STAR_index.sh</span> <span class="va">$genome_fasta_path</span> <span class="va">$gtf_path</span> <span class="va">$outpud_dir</span> <span class="st">&quot;hg19&quot;</span> 99</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">outpud_dir=</span>../results
+<span class="ex">../functions/build_STAR_index.sh</span> <span class="va">$genome_fasta_path</span> <span class="va">$gtf_path</span> <span class="va">$outpud_dir</span> <span class="st">&quot;hg19&quot;</span> 99</code></pre>
 </div>
 <div id="star-1pass" class="section level2">
 <h2><span class="header-section-number">6.2</span> STAR-1pass</h2>
 <p>If you are working with a cohort of bamfiles, STAR developer suggests to run the alignment in a two-pass mode. This consists of first aligning all the bamfiles, collecting the <em>splice junctions</em> as output of STAR and realign all the bamfiles with this new information. For more details about 1-pass, 2-pass-multi and 2-pass-single see Section 8 of the <a href="https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf">STAR documentation</a>. In my pipeline I normally use the 2-pass multi strategy as below.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">FQ1=</span>../data/SRR1608907_1.fastq.gz
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">FQ1=</span>../data/SRR1608907_1.fastq.gz
 <span class="va">FQ2=</span>../data/SRR1608907_2.fastq.gz
 <span class="va">star_genome100=</span>path_to_genome_directory/star_index_hg19_99
 
@@ -185,21 +214,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 --fastqfiles <span class="va">$FQ1</span>,<span class="va">$FQ2</span> \
 --sampleName SRR1608907 \
 --outdir ../results/star_1pass \
---STARmode <span class="st">&quot;1Pass&quot;</span> </code></pre></div>
+--STARmode <span class="st">&quot;1Pass&quot;</span> </code></pre>
 <p>The <code>R</code> function above is a wrapper for the <code>STAR</code> call below:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Version STAR/2.5</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Version STAR/2.5</span>
 
 <span class="ex">STAR</span> --genomeDir path_to_star_index_hg19 \
---readFilesIn <span class="va">$FQ1</span> <span class="va">$FQ2</span> --runThreadN 27 --chimSegmentMin 10 --readFilesCommand zcat --alignSJoverhangMin 8 --outBAMcompression 10 --alignSJDBoverhangMin 1 --limitBAMsortRAM 85741557872 --outFilterMismatchNmax 999 --alignIntronMin 20 --alignIntronMax 200000 --alignMatesGapMax 20000 --outFileNamePrefix path_to_star_1pass/SampleName --outSAMtype BAM SortedByCoordinate --outFilterType BySJout --outFilterMultimapNmax 15</code></pre></div>
+--readFilesIn <span class="va">$FQ1</span> <span class="va">$FQ2</span> --runThreadN 27 --chimSegmentMin 10 --readFilesCommand zcat --alignSJoverhangMin 8 --outBAMcompression 10 --alignSJDBoverhangMin 1 --limitBAMsortRAM 85741557872 --outFilterMismatchNmax 999 --alignIntronMin 20 --alignIntronMax 200000 --alignMatesGapMax 20000 --outFileNamePrefix path_to_star_1pass/SampleName --outSAMtype BAM SortedByCoordinate --outFilterType BySJout --outFilterMultimapNmax 15</code></pre>
 <p>To see all the arguments available:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Rscript</span> ../functions/run_STAR.R --help</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Rscript</span> ../functions/run_STAR.R --help</code></pre>
 <p>After running STAR on all the fastq files available we can collect all the splice junctions from the first pass and use them for the second pass.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># concatenate splice junctions from all samples from ran in pass1</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># concatenate splice junctions from all samples from ran in pass1</span>
 <span class="fu">cat</span> ../results/star_1pass/*SJ.out.tab <span class="op">&gt;</span> ../results/star_1pass/combined_sj.out.tab
 <span class="co"># Dobin suggests to remove chrm cause they are usually False positives</span>
-<span class="fu">awk</span> <span class="st">&#39;!/chrM/&#39;</span> ../results/star_1pass/combined_sj.out.tab <span class="op">&gt;</span> ../results/star_1pass/combined_sj_nochrM.out.tab</code></pre></div>
+<span class="fu">awk</span> <span class="st">&#39;!/chrM/&#39;</span> ../results/star_1pass/combined_sj.out.tab <span class="op">&gt;</span> ../results/star_1pass/combined_sj_nochrM.out.tab</code></pre>
 <p>Again, for quality check, have a look at the amazing alignment summary enabled by <a href="http://multiqc.info/">MultiQC</a>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ../results/star_1pass --interactive -n <span class="st">&quot;STAR_1passQC&quot;</span> -o ../results</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ../results/star_1pass --interactive -n <span class="st">&quot;STAR_1passQC&quot;</span> -o ../results</code></pre>
 </div>
 <div id="star-2pass" class="section level2">
 <h2><span class="header-section-number">6.3</span> STAR-2pass</h2>
@@ -209,7 +238,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>STAR is run with the option of output chimeric reads switched on. This will allow fusion analysis.</li>
 </ul>
 <p>The ouput of STAR is a bamfile already sorted by coordinate with the suffix <code>Aligned.sortedByCoord.out.bam</code>. At this stage we can also run two more steps <code>post_align_qc1.sh</code> and <code>post_align_qc2.sh</code>, discussed below.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">FQ1=</span>../data/SRR1608907_1.fastq.gz
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">FQ1=</span>../data/SRR1608907_1.fastq.gz
 <span class="va">FQ2=</span>../data/SRR1608907_2.fastq.gz
 <span class="va">star_genome100=</span>path_to_genome_directory/star_index_hg19_99
 
@@ -231,32 +260,30 @@ SRR1608907  # sample name
 <span class="ex">../functions/post_align_qc2.sh</span> <span class="dt">\ </span>../results/star_2pass/SRR1608907.Aligned.sortedByCoord.out.bam \
 SRR1608907 \
 path_to_genome.fa \
-SRR1608907 </code></pre></div>
+SRR1608907 </code></pre>
 </div>
 <div id="sec:post-align" class="section level2">
 <h2><span class="header-section-number">6.4</span> Details about post-alignment functions</h2>
 <ul>
-<li><code>post_align_qc1.sh</code> is optional:</li>
-</ul>
+<li><p><code>post_align_qc1.sh</code> is optional:</p>
 <ol style="list-style-type: decimal">
 <li>Runs <a href="http://bioinf.wehi.edu.au/featureCounts/">featureCounts</a> to get gene counts and compute PCA to evaulate the concordance between bamfiles sequenced on different lanes. This allows a QC before merging the different bamfiles into a single one.</li>
 <li>Runs <a href="https://broadinstitute.github.io/picard/command-line-overview.html">CollectMultipleMetrics</a> to collect the fragment distribution of the bamfiles (only possible with PE reads). This is also a good QC to check that the fragment distribution of bamfiles on different lanes is the same.</li>
-</ol>
-<ul>
-<li><code>post_align_qc2.sh</code> contains necessary pre-prcessing steps:</li>
-</ul>
+</ol></li>
+<li><p><code>post_align_qc2.sh</code> contains necessary pre-prcessing steps:</p>
 <ol style="list-style-type: decimal">
 <li>Marks PCR duplicates (using <a href="http://lomereiter.github.io/sambamba/docs/sambamba-markdup.html">sambamba markdup</a>)</li>
 <li>Add Read Groups to single runs before merging bamfiles (using <a href="https://broadinstitute.github.io/picard/command-line-overview.html">AddOrReplaceReadGroups</a>). Even if files do not need to be merges, <code>GATK</code> requires read groups to be added bamfiles.</li>
 <li>Run <a href="https://broadinstitute.github.io/picard/command-line-overview.html">ValidateSamFile</a> to check for errors in the final bamfile.</li>
-</ol>
+</ol></li>
+</ul>
 <p>In order, its arguments are:</p>
 <ol style="list-style-type: decimal">
 <li>Path to <strong>aligned bamfile</strong>;</li>
 <li><code>SampleName</code>. This is the name of the sample applied to the <code>RGID</code> and <code>RGPU</code> fields below.</li>
 <li><code>SampleName of the run</code>. If a sample was sequenced across different lanes you need to set lane-specific read groups to each separate bamfile (e.g. SampleName_L1, SampleName_L2). This sample name will be used for the fields <code>RGLB</code> and <code>RGSM</code> in the <code>AddOrReplaceReadGroups</code> groups below. See Chapter @(ch:merge-bamfiles) for merging bamfiles.</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Picard tool function to add read groups to a bamfile</span>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Picard tool function to add read groups to a bamfile</span>
 <span class="ex">AddOrReplaceReadGroups</span> \
         I= ./star_2pass/SRR1608907.Aligned.sortedByCoord.out.bam \
         O= ./star_2pass/SRR1608907.Aligned.sortedByCoord.out.RG.bam \
@@ -264,10 +291,10 @@ SRR1608907 </code></pre></div>
         RGPU=SRR1608907 \
         RGLB=SRR1608907_L1 \
         RGPL=<span class="st">&quot;illumina&quot;</span> \
-        RGSM=SRR1608907_L1</code></pre></div>
+        RGSM=SRR1608907_L1</code></pre>
 <p>After running <code>post_align_qc2.sh</code> a file with the suffix <code>Aligned.reorderedDupl.rg.bam</code> will be created where read groups are added and PCR duplicated reads marked.</p>
 <p>This time <em>MultiQC</em> will give us a summary output also of the fragment distributions and gene counts if the output files are stored within the <code>star_2pass</code> folder.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ../results/star_2pass --interactive -n <span class="st">&quot;STAR_2passQC&quot;</span> -o ../results</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ../results/star_2pass --interactive -n <span class="st">&quot;STAR_2passQC&quot;</span> -o ../results</code></pre>
 
 </div>
 </div>

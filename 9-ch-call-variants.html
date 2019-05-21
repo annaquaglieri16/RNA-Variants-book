@@ -50,41 +50,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 </head>
@@ -103,7 +129,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.1</b> Disclaimer</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.2</b> Disclaimer</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="2-ch-download.html"><a href="2-ch-download.html"><i class="fa fa-check"></i><b>2</b> Download RNA-Seq data from GEO</a><ul>
 <li class="chapter" data-level="2.1" data-path="2-ch-download.html"><a href="2-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>2.1</b> Get SRX sample names</a></li>
@@ -140,6 +167,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html"><i class="fa fa-check"></i><b>12</b> Analyse time-course mutations with superFreq</a><ul>
 <li class="chapter" data-level="12.1" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>12.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="13-ch-refer.html"><a href="13-ch-refer.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></li>
 
@@ -162,52 +190,53 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="ch:call-variants" class="section level1">
 <h1><span class="header-section-number">9</span> Variant calling</h1>
-<p>You can perform variant calling on the whole genome or to a specific regions that you can specify with a <code>.bed</code> file. Here we show how to call variants on specific regions of interest. The target regions were created using the gene symbols of the mutations listed in <strong>Supplemental Table 3</strong> of <span class="citation">(Lavallée et al. <a href="12-ch-superfreq.html#ref-Lavallee2016-sf">2016</a>)</span> and listed in <code>../data/mutations_Lavallee_2016.csv</code>. We used the hg19 inbuilt annotation of <code>Rsubread</code> to obtain the gene ranges and added 500 bp at the end and at the beginning of each gene. The final <code>bed</code> files is <code>../data/target_regions.bed</code>.</p>
+<p>You can perform variant calling on the whole genome or to a specific regions that you can specify with a <code>.bed</code> file.
+Here we show how to call variants on specific regions of interest. The target regions were created using the gene symbols of the mutations listed in <strong>Supplemental Table 3</strong> of <span class="citation">(Lavallée et al. <a href="13-ch-refer.html#ref-Lavallee2016-sf">2016</a>)</span> and listed in <code>../data/mutations_Lavallee_2016.csv</code>. We used the hg19 inbuilt annotation of <code>Rsubread</code> to obtain the gene ranges and added 500 bp at the end and at the beginning of each gene. The final <code>bed</code> files is <code>../data/target_regions.bed</code>.</p>
 <p>View all the options in the <code>../functions/call_variants.R</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Rscript</span> ../functions/call_variants.R --help</code></pre></div>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Rscript</span> ../functions/call_variants.R --help</code></pre>
 <p>Below is an example to run <code>VarDict</code> and <code>MuTect2</code> in tumour-only mode. The directory needed for VarDict can be downloaded from the software GitHub page <a href="https://github.com/AstraZeneca-NGS/VarDict" class="uri">https://github.com/AstraZeneca-NGS/VarDict</a>.</p>
 <p>The function above wraps up calls for the callers included in the pipeline. Below are details about the actual caller settings that I normally use to call variants with these callers..</p>
 <div id="call-with-mutect2" class="section level2">
 <h2><span class="header-section-number">9.1</span> Call with MuTect2</h2>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load gatk/3.7.0
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load gatk/3.7.0
 
 <span class="ex">gatk</span> -T MuTect2 -R path_to_genome.fa \
 -I:tumor ../results/star_2pass/SRR1608907_Aligned.reorderedDupl.rg.split.recalibrated.bam \
 -L ../data/target_regions.bed \
 -o ../results/mutect/regions/SampleName_germline_snvs_indels.vcf \
--log ../results/mutect/regions/SampleName_germline_snvs_indels_log</code></pre></div>
+-log ../results/mutect/regions/SampleName_germline_snvs_indels_log</code></pre>
 </div>
 <div id="call-with-samtools-varscan2" class="section level2">
 <h2><span class="header-section-number">9.2</span> Call with Samtools + VarScan2</h2>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load varscan/2.3.9
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load varscan/2.3.9
 <span class="ex">module</span> load samtools/1.6
 
 <span class="ex">samtools</span> mpileup --output-tags AD,ADF,ADR,DP,SP \
 --fasta-ref -R path_to_genome.fa \
--l ../data/target_regions.bed ../results/star_2pass/SRR1608907_Aligned.reorderedDupl.rg.split.recalibrated.bam <span class="kw">|</span> <span class="ex">varscan</span> mpileup2cns --variants 1 --output-vcf 1 --min-var-freq 0.01 <span class="op">&gt;</span> ../results/varscan/regions/SampleName_germline_snvs_indels.vcf <span class="op">2&gt;</span> ../results/varscan/regions/SampleName_germline_snvs_indels_log</code></pre></div>
+-l ../data/target_regions.bed ../results/star_2pass/SRR1608907_Aligned.reorderedDupl.rg.split.recalibrated.bam <span class="kw">|</span> <span class="ex">varscan</span> mpileup2cns --variants 1 --output-vcf 1 --min-var-freq 0.01 <span class="op">&gt;</span> ../results/varscan/regions/SampleName_germline_snvs_indels.vcf <span class="op">2&gt;</span> ../results/varscan/regions/SampleName_germline_snvs_indels_log</code></pre>
 </div>
 <div id="call-with-vardict" class="section level2">
 <h2><span class="header-section-number">9.3</span> Call with VarDict</h2>
 <p>The <code>teststrandbias.R</code> and <code>var2vcf_valid.pl</code> scripts were downloaded from <a href="https://github.com/AstraZeneca-NGS/VarDict" class="uri">https://github.com/AstraZeneca-NGS/VarDict</a>. VarDict only calls variants on a target region.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load vardict/1.5.1
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load vardict/1.5.1
 
 <span class="ex">vardict</span> -c 1 -S 2 -E 3 -g 4 -r 2 -t -th 10 -v -G \
 -R path_to_genome.fa \
--b ../results/star_2pass/SRR1608907_Aligned.reorderedDupl.rg.bam ../data/target_regions.bed  <span class="kw">|</span> <span class="ex">vardict_dir/teststrandbias.R</span> <span class="kw">|</span> <span class="ex">vardict_dir/var2vcf_valid.pl</span> -N -E -f 0.05 <span class="op">&gt;</span>  ../results/vardict/regions/SampleName_germline_snvs_indels.vcf</code></pre></div>
+-b ../results/star_2pass/SRR1608907_Aligned.reorderedDupl.rg.bam ../data/target_regions.bed  <span class="kw">|</span> <span class="ex">vardict_dir/teststrandbias.R</span> <span class="kw">|</span> <span class="ex">vardict_dir/var2vcf_valid.pl</span> -N -E -f 0.05 <span class="op">&gt;</span>  ../results/vardict/regions/SampleName_germline_snvs_indels.vcf</code></pre>
 </div>
 <div id="annotate-variants" class="section level2">
 <h2><span class="header-section-number">9.4</span> Annotate variants</h2>
 <p>Below is an example using the output from VarScan but the same call is used for Mutect2 and VarDict vcf files.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load ensembl-vep/89.0
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">module</span> load ensembl-vep/89.0
 
 <span class="ex">vep</span> --dir_cache dir_to_VEP_cache/.vep --offline \
 -i ../results/varscan/regions/SampleName_germline_snvs_indels.vcf \
 -o ../results/varscan/regions/annotated_variants/SampleName_germline_annotated.vcf \
---cache --everything --force_overwrite --assembly GRCh37 --fork 12 --vcf --port 3337</code></pre></div>
+--cache --everything --force_overwrite --assembly GRCh37 --fork 12 --vcf --port 3337</code></pre>
 </div>
 <div id="indels-km" class="section level2">
 <h2><span class="header-section-number">9.5</span> Targeted INDEL calling with <code>km</code> algorithm</h2>
-<p>The <a href="https://github.com/iric-soft/km"><code>km</code> algorithm</a> <span class="citation">(Eric Olivier Audemard, Patrick Gendron, Vincent-Philippe Lavallée, Josée Hébert, Guy Sauvageau, Sébastien Lemieux <a href="12-ch-superfreq.html#ref-Software-km">2018</a>)</span> is one of the sofware developed for targeted INDEL calls in RNA-Seq. Calling INDELs from RNA-Seq is challenging and several tools have been published between 2017-2019 to accomplish this task. The <code>km</code> algorithm was benchmarked on the AML Leucegene and TCGA-LAML datasets.</p>
+<p>The <a href="https://github.com/iric-soft/km"><code>km</code> algorithm</a> <span class="citation">(Eric Olivier Audemard, Patrick Gendron, Vincent-Philippe Lavallée, Josée Hébert, Guy Sauvageau, Sébastien Lemieux <a href="13-ch-refer.html#ref-Software-km">2018</a>)</span> is one of the sofware developed for targeted INDEL calls in RNA-Seq. Calling INDELs from RNA-Seq is challenging and several tools have been published between 2017-2019 to accomplish this task. The <code>km</code> algorithm was benchmarked on the AML Leucegene and TCGA-LAML datasets.</p>
 
 </div>
 </div>

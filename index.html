@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="2-overview.html">
+<link rel="next" href="2-ch-download.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -128,45 +128,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong><a href="./">RNA-Seq variant calling</a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Setup</a></li>
-<li class="chapter" data-level="2" data-path="2-overview.html"><a href="2-overview.html"><i class="fa fa-check"></i><b>2</b> Overview</a><ul>
-<li class="chapter" data-level="2.1" data-path="2-overview.html"><a href="2-overview.html#disclaimer"><i class="fa fa-check"></i><b>2.1</b> Disclaimer</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.2</b> Disclaimer</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="3-ch-download.html"><a href="3-ch-download.html"><i class="fa fa-check"></i><b>3</b> Download RNA-Seq data from GEO</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-ch-download.html"><a href="3-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>3.1</b> Get SRX sample names</a></li>
-<li class="chapter" data-level="3.2" data-path="3-ch-download.html"><a href="3-ch-download.html#create-ncbi-query"><i class="fa fa-check"></i><b>3.2</b> Create NCBI query</a></li>
+<li class="chapter" data-level="2" data-path="2-ch-download.html"><a href="2-ch-download.html"><i class="fa fa-check"></i><b>2</b> Download RNA-Seq data from GEO</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-ch-download.html"><a href="2-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>2.1</b> Get SRX sample names</a></li>
+<li class="chapter" data-level="2.2" data-path="2-ch-download.html"><a href="2-ch-download.html#create-ncbi-query"><i class="fa fa-check"></i><b>2.2</b> Create NCBI query</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-ch-downsample.html"><a href="4-ch-downsample.html"><i class="fa fa-check"></i><b>4</b> Downsampling FASTQ files</a></li>
-<li class="chapter" data-level="5" data-path="5-ch-input-pipe.html"><a href="5-ch-input-pipe.html"><i class="fa fa-check"></i><b>5</b> Define files and programs needed for the pipeline</a></li>
-<li class="chapter" data-level="6" data-path="6-ch-fastqc.html"><a href="6-ch-fastqc.html"><i class="fa fa-check"></i><b>6</b> FASTQC and adapters trimming</a><ul>
-<li class="chapter" data-level="6.1" data-path="6-ch-fastqc.html"><a href="6-ch-fastqc.html#parallelise-your-fastqc"><i class="fa fa-check"></i><b>6.1</b> Parallelise your <code>FASTQC</code></a></li>
-<li class="chapter" data-level="6.2" data-path="6-ch-fastqc.html"><a href="6-ch-fastqc.html#summarise-reports-with-multiqc"><i class="fa fa-check"></i><b>6.2</b> Summarise reports with <code>MultiQC</code></a></li>
+<li class="chapter" data-level="3" data-path="3-ch-downsample.html"><a href="3-ch-downsample.html"><i class="fa fa-check"></i><b>3</b> Downsampling FASTQ files</a></li>
+<li class="chapter" data-level="4" data-path="4-ch-input-pipe.html"><a href="4-ch-input-pipe.html"><i class="fa fa-check"></i><b>4</b> Define files and programs needed for the pipeline</a></li>
+<li class="chapter" data-level="5" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html"><i class="fa fa-check"></i><b>5</b> FASTQC and adapters trimming</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#parallelise-your-fastqc"><i class="fa fa-check"></i><b>5.1</b> Parallelise your <code>FASTQC</code></a></li>
+<li class="chapter" data-level="5.2" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#summarise-reports-with-multiqc"><i class="fa fa-check"></i><b>5.2</b> Summarise reports with <code>MultiQC</code></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-ch-align.html"><a href="7-ch-align.html"><i class="fa fa-check"></i><b>7</b> Alignement, Read Groups, Mark duplicates</a><ul>
-<li class="chapter" data-level="7.1" data-path="7-ch-align.html"><a href="7-ch-align.html#create-star-index"><i class="fa fa-check"></i><b>7.1</b> Create <code>STAR</code> index</a></li>
-<li class="chapter" data-level="7.2" data-path="7-ch-align.html"><a href="7-ch-align.html#star-1pass"><i class="fa fa-check"></i><b>7.2</b> STAR-1pass</a></li>
-<li class="chapter" data-level="7.3" data-path="7-ch-align.html"><a href="7-ch-align.html#star-2pass"><i class="fa fa-check"></i><b>7.3</b> STAR-2pass</a></li>
-<li class="chapter" data-level="7.4" data-path="7-ch-align.html"><a href="7-ch-align.html#sec:post-align"><i class="fa fa-check"></i><b>7.4</b> Details about post-alignment functions</a></li>
+<li class="chapter" data-level="6" data-path="6-ch-align.html"><a href="6-ch-align.html"><i class="fa fa-check"></i><b>6</b> Alignement, Read Groups, Mark duplicates</a><ul>
+<li class="chapter" data-level="6.1" data-path="6-ch-align.html"><a href="6-ch-align.html#create-star-index"><i class="fa fa-check"></i><b>6.1</b> Create <code>STAR</code> index</a></li>
+<li class="chapter" data-level="6.2" data-path="6-ch-align.html"><a href="6-ch-align.html#star-1pass"><i class="fa fa-check"></i><b>6.2</b> STAR-1pass</a></li>
+<li class="chapter" data-level="6.3" data-path="6-ch-align.html"><a href="6-ch-align.html#star-2pass"><i class="fa fa-check"></i><b>6.3</b> STAR-2pass</a></li>
+<li class="chapter" data-level="6.4" data-path="6-ch-align.html"><a href="6-ch-align.html#sec:post-align"><i class="fa fa-check"></i><b>6.4</b> Details about post-alignment functions</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-ch-merge-bamfiles.html"><a href="8-ch-merge-bamfiles.html"><i class="fa fa-check"></i><b>8</b> Merge bamfiles</a></li>
-<li class="chapter" data-level="9" data-path="9-ch-gatk-prep.html"><a href="9-ch-gatk-prep.html"><i class="fa fa-check"></i><b>9</b> GATK pre-processing</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-ch-gatk-prep.html"><a href="9-ch-gatk-prep.html#splitncigarreads"><i class="fa fa-check"></i><b>9.1</b> SplitNCigarReads</a></li>
-<li class="chapter" data-level="9.2" data-path="9-ch-gatk-prep.html"><a href="9-ch-gatk-prep.html#base-recalibration"><i class="fa fa-check"></i><b>9.2</b> Base recalibration</a></li>
+<li class="chapter" data-level="7" data-path="7-ch-merge-bamfiles.html"><a href="7-ch-merge-bamfiles.html"><i class="fa fa-check"></i><b>7</b> Merge bamfiles</a></li>
+<li class="chapter" data-level="8" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html"><i class="fa fa-check"></i><b>8</b> GATK pre-processing</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html#splitncigarreads"><i class="fa fa-check"></i><b>8.1</b> SplitNCigarReads</a></li>
+<li class="chapter" data-level="8.2" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html#base-recalibration"><i class="fa fa-check"></i><b>8.2</b> Base recalibration</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html"><i class="fa fa-check"></i><b>10</b> Variant calling</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#call-with-mutect2"><i class="fa fa-check"></i><b>10.1</b> Call with MuTect2</a></li>
-<li class="chapter" data-level="10.2" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#call-with-samtools-varscan2"><i class="fa fa-check"></i><b>10.2</b> Call with Samtools + VarScan2</a></li>
-<li class="chapter" data-level="10.3" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#call-with-vardict"><i class="fa fa-check"></i><b>10.3</b> Call with VarDict</a></li>
-<li class="chapter" data-level="10.4" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#annotate-variants"><i class="fa fa-check"></i><b>10.4</b> Annotate variants</a></li>
-<li class="chapter" data-level="10.5" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#indels-km"><i class="fa fa-check"></i><b>10.5</b> Targeted INDEL calling with <code>km</code> algorithm</a></li>
+<li class="chapter" data-level="9" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html"><i class="fa fa-check"></i><b>9</b> Variant calling</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-mutect2"><i class="fa fa-check"></i><b>9.1</b> Call with MuTect2</a></li>
+<li class="chapter" data-level="9.2" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-samtools-varscan2"><i class="fa fa-check"></i><b>9.2</b> Call with Samtools + VarScan2</a></li>
+<li class="chapter" data-level="9.3" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-vardict"><i class="fa fa-check"></i><b>9.3</b> Call with VarDict</a></li>
+<li class="chapter" data-level="9.4" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#annotate-variants"><i class="fa fa-check"></i><b>9.4</b> Annotate variants</a></li>
+<li class="chapter" data-level="9.5" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#indels-km"><i class="fa fa-check"></i><b>9.5</b> Targeted INDEL calling with <code>km</code> algorithm</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-ch-variants-st.html"><a href="11-ch-variants-st.html"><i class="fa fa-check"></i><b>11</b> Standardise output of variants</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-ch-variants-st.html"><a href="11-ch-variants-st.html#superfreq-to-combine-time-course-mutations-for-one-patient"><i class="fa fa-check"></i><b>11.1</b> superFreq to combine time-course mutations for one patient</a></li>
+<li class="chapter" data-level="10" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html"><i class="fa fa-check"></i><b>10</b> Standardise output of variants</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html#superfreq-to-combine-time-course-mutations-for-one-patient"><i class="fa fa-check"></i><b>10.1</b> superFreq to combine time-course mutations for one patient</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-ch-fusions.html"><a href="12-ch-fusions.html"><i class="fa fa-check"></i><b>12</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
-<li class="chapter" data-level="13" data-path="13-ch-superfreq.html"><a href="13-ch-superfreq.html"><i class="fa fa-check"></i><b>13</b> Analyse time-course mutations with superFreq</a><ul>
-<li class="chapter" data-level="13.1" data-path="13-ch-superfreq.html"><a href="13-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>13.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
+<li class="chapter" data-level="11" data-path="11-ch-fusions.html"><a href="11-ch-fusions.html"><i class="fa fa-check"></i><b>11</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
+<li class="chapter" data-level="12" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html"><i class="fa fa-check"></i><b>12</b> Analyse time-course mutations with superFreq</a><ul>
+<li class="chapter" data-level="12.1" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>12.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="13-ch-refer.html"><a href="13-ch-refer.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></li>
 
@@ -197,11 +198,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone git@github.com:annaquaglieri16/RNA-seq-variant-calling.git</code></pre>
 <p>All the functions used for the variant calling and downsampling pipeline are inside the <code>./functions</code> folder.</p>
 <ul>
-<li>If you want to download sample <code>FASTQ</code> files or learn how to download <code>FASTQ</code> files from GEO go to Section <a href="3-ch-download.html#ch:download">3</a>.</li>
-<li>If you already have the <code>FASTQ</code> files and YOU WANT TO randomly downsample your samples to a fix number of reads go to Section <a href="4-ch-downsample.html#ch:downsample">4</a>.</li>
-<li>If you already have the <code>FASTQ</code> files and you don’t need to perform quality control or downsampl your files go to Section <a href="7-ch-align.html#ch:align">7</a>.</li>
-<li>If you already have the <code>BAM</code> files and you want to call variants go to Section <a href="9-ch-gatk-prep.html#ch:gatk-prep">9</a>.</li>
+<li>If you want to download sample <code>FASTQ</code> files or learn how to download <code>FASTQ</code> files from GEO go to Section <a href="2-ch-download.html#ch:download">2</a>.</li>
+<li>If you already have the <code>FASTQ</code> files and YOU WANT TO randomly downsample your samples to a fix number of reads go to Section <a href="3-ch-downsample.html#ch:downsample">3</a>.</li>
+<li>If you already have the <code>FASTQ</code> files and you don’t need to perform quality control or downsampl your files go to Section <a href="6-ch-align.html#ch:align">6</a>.</li>
+<li>If you already have the <code>BAM</code> files and you want to call variants go to Section <a href="8-ch-gatk-prep.html#ch:gatk-prep">8</a>.</li>
 </ul>
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">1.1</span> Overview</h2>
+<p>Figure <a href="index.html#fig:overview">1.1</a> below offers an overview of the pipeline that I applied to several of the cancer RNA-Seq samples that I worked with. However, the current book mentions other callers not displayed in the figure.</p>
+<div class="figure" style="text-align: center"><span id="fig:overview"></span>
+<img src="figures/overview-1.png" alt="Overview of the variant calling pipeline that I used used for several cancer RNA-Seq data." width="100%" />
+<p class="caption">
+Figure 1.1: Overview of the variant calling pipeline that I used used for several cancer RNA-Seq data.
+</p>
+</div>
+<p>The sofwtare mentioned in Figure <a href="index.html#fig:overview">1.1</a> are mentioned throughout the book and cited below:</p>
+<ul>
+<li><code>GATK</code> <span class="citation">(McKenna et al. <a href="13-ch-refer.html#ref-McKenna2010-mc">2010</a>)</span></li>
+<li><code>VarScan</code> <span class="citation">(Koboldt et al. <a href="13-ch-refer.html#ref-Koboldt2012-wx">2012</a>)</span></li>
+<li><code>superFreq</code> <span class="citation">(Flensburg et al. <a href="13-ch-refer.html#ref-Flensburg2018-ah">2018</a>)</span></li>
+<li><code>VarDict</code> <span class="citation">(Lai et al. <a href="13-ch-refer.html#ref-Lai2016-ws">2016</a>)</span></li>
+<li><code>km</code> <span class="citation">(Eric Olivier Audemard, Patrick Gendron, Vincent-Philippe Lavallée, Josée Hébert, Guy Sauvageau, Sébastien Lemieux <a href="13-ch-refer.html#ref-Software-km">2018</a>)</span></li>
+<li><code>VEP</code> <span class="citation">(McLaren et al. <a href="13-ch-refer.html#ref-McLaren2016-lv">2016</a>)</span></li>
+<li><a href="https://annaquaglieri16.github.io/varikondo/index.html"><code>varikondo</code></a></li>
+</ul>
+</div>
+<div id="disclaimer" class="section level2">
+<h2><span class="header-section-number">1.2</span> Disclaimer</h2>
+<p>The following workflow was built in a modular way and it is not wrapped up into a pipeline manager. I aknowledge the limitations and non-user-friendliness of some steps. However, it offers a comprehensive view of several tools and steps used for variant calling in RNA-Seq as well as general tools used in any bioinformatics pipeline.</p>
+
+</div>
 </div>
             </section>
 
@@ -209,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="2-overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="2-ch-download.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
