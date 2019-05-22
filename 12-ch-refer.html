@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>3 Downsampling FASTQ or BAM files | From FASTQ files to Variant Calling for RNA-Seq</title>
-  <meta name="description" content="3 Downsampling FASTQ or BAM files | From FASTQ files to Variant Calling for RNA-Seq">
+  <title>12 References | From FASTQ files to Variant Calling for RNA-Seq</title>
+  <meta name="description" content="12 References | From FASTQ files to Variant Calling for RNA-Seq">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="3 Downsampling FASTQ or BAM files | From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta property="og:title" content="12 References | From FASTQ files to Variant Calling for RNA-Seq" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Downsampling FASTQ or BAM files | From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta name="twitter:title" content="12 References | From FASTQ files to Variant Calling for RNA-Seq" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="2-ch-download.html">
-<link rel="next" href="4-ch-input-pipe.html">
+<link rel="prev" href="11-ch-superfreq.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -189,21 +189,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:downsample" class="section level1">
-<h1><span class="header-section-number">3</span> Downsampling FASTQ or BAM files</h1>
-<p>The <a href="https://github.com/lh3/seqtk">seqtk</a> tool can be used to downsample an exact number of reads from paired end (PE) FASTQ files. The following is an example run where I am downsampling fastq files to 10000 reads.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">path-to-seqtk-folder/seqtk</span> sample -s100 test_data/SRR1608610_1.fastq.gz 10000 <span class="op">&gt;</span> test_data/sub_SRR1608610_1.fq
-<span class="ex">path-to-seqtk-folder/seqtk</span> sample -s100 test_data/SRR1608610_2.fastq.gz 10000 <span class="op">&gt;</span> test_data/sub_SRR1608610_2.fq</code></pre>
-<p>In some other occasions I have also used the <code>Picard Tools</code> function <a href="https://broadinstitute.github.io/picard/command-line-overview.html#DownsampleSam"><code>DownsampleSam</code></a> <span class="citation">(Institute, <a href="12-ch-refer.html#ref-Institute_undated-qc">n.d.</a>)</span> which downsample a bamfile at a specified proportion of the initial given reads.</p>
+<div id="ch:refer" class="section level1">
+<h1><span class="header-section-number">12</span> References</h1>
 
+<div id="refs" class="references">
+<div id="ref-Andrews2010-fk">
+<p>Andrews, Simon. 2010. “FastQC: A Quality Control Tool for High Throughput Sequence Data.”</p>
+</div>
+<div id="ref-Software-km">
+<p>Eric Olivier Audemard, Patrick Gendron, Vincent-Philippe Lavallée, Josée Hébert, Guy Sauvageau, Sébastien Lemieux. 2018. “Targeted Variant Detection in Leukemia Using Unaligned RNA-Seq Reads.” <em>bioRXiv</em>, April.</p>
+</div>
+<div id="ref-Ewels2016-rc">
+<p>Ewels, Philip, Måns Magnusson, Sverker Lundin, and Max Käller. 2016. “MultiQC: Summarize Analysis Results for Multiple Tools and Samples in a Single Report.” <em>Bioinformatics</em> 32 (19): 3047–8.</p>
+</div>
+<div id="ref-Flensburg2018-ah">
+<p>Flensburg, Christoffer, Tobias Sargeant, Alicia Oshlack, and Ian Majewski. 2018. “SuperFreq: Integrated Mutation Detection and Clonal Tracking in Cancer.” <em>bioRxiv</em>.</p>
+</div>
+<div id="ref-Institute_undated-qc">
+<p>Institute, Broad. n.d. “Picard Tools.” <a href="http://broadinstitute.github.io/picard.">http://broadinstitute.github.io/picard.</a></p>
+</div>
+<div id="ref-Koboldt2012-wx">
+<p>Koboldt, Daniel C, Qunyuan Zhang, David E Larson, Dong Shen, Michael D McLellan, Ling Lin, Christopher A Miller, Elaine R Mardis, Li Ding, and Richard K Wilson. 2012. “VarScan 2: Somatic Mutation and Copy Number Alteration Discovery in Cancer by Exome Sequencing.” <em>Genome Res.</em> 22 (3): 568–76.</p>
+</div>
+<div id="ref-Lai2016-ws">
+<p>Lai, Zhongwu, Aleksandra Markovets, Miika Ahdesmaki, Brad Chapman, Oliver Hofmann, Robert McEwen, Justin Johnson, Brian Dougherty, J Carl Barrett, and Jonathan R Dry. 2016. “VarDict: A Novel and Versatile Variant Caller for Next-Generation Sequencing in Cancer Research.” <em>Nucleic Acids Res.</em> 44 (11): e108.</p>
+</div>
+<div id="ref-Lavallee2016-sf">
+<p>Lavallée, Vincent-Philippe, Sébastien Lemieux, Geneviève Boucher, Patrick Gendron, Isabel Boivin, Richard Neil Armstrong, Guy Sauvageau, and Josée Hébert. 2016. “RNA-sequencing Analysis of Core Binding Factor AML Identifies Recurrent ZBTB7A Mutations and Defines RUNX1-CBFA2T3 Fusion Signature.” <em>Blood</em>, March.</p>
+</div>
+<div id="ref-McKenna2010-mc">
+<p>McKenna, Aaron, Matthew Hanna, Eric Banks, Andrey Sivachenko, Kristian Cibulskis, Andrew Kernytsky, Kiran Garimella, et al. 2010. “The Genome Analysis Toolkit: A MapReduce Framework for Analyzing Next-Generation DNA Sequencing Data.” <em>Genome Res.</em> 20 (9): 1297–1303.</p>
+</div>
+<div id="ref-McLaren2016-lv">
+<p>McLaren, William, Laurent Gil, Sarah E Hunt, Harpreet Singh Riat, Graham R S Ritchie, Anja Thormann, Paul Flicek, and Fiona Cunningham. 2016. “The Ensembl Variant Effect Predictor.” <em>Genome Biol.</em> 17 (1): 122.</p>
+</div>
+<div id="ref-Tange_undated-th">
+<p>Tange, Ole. n.d. “GNU Parallel: The Command-Line Power Tool.”</p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="2-ch-download.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="4-ch-input-pipe.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="11-ch-superfreq.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -233,7 +264,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/03-Downsample.Rmd",
+"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/13-References.Rmd",
 "text": "Edit"
 },
 "history": {

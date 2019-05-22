@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="5-ch-fastqc.html">
-<link rel="next" href="7-ch-merge-bamfiles.html">
+<link rel="next" href="7-ch-gatk-prep.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -148,28 +148,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="6-ch-align.html"><a href="6-ch-align.html#star-1pass"><i class="fa fa-check"></i><b>6.2</b> STAR-1pass</a></li>
 <li class="chapter" data-level="6.3" data-path="6-ch-align.html"><a href="6-ch-align.html#star-2pass"><i class="fa fa-check"></i><b>6.3</b> STAR-2pass</a></li>
 <li class="chapter" data-level="6.4" data-path="6-ch-align.html"><a href="6-ch-align.html#sec:post-align"><i class="fa fa-check"></i><b>6.4</b> Details about post-alignment functions</a></li>
-<li class="chapter" data-level="6.5" data-path="6-ch-align.html"><a href="6-ch-align.html#add-pictures-read-group-and-pipeline"><i class="fa fa-check"></i><b>6.5</b> Add pictures: read group and pipeline</a></li>
+<li class="chapter" data-level="6.5" data-path="6-ch-align.html"><a href="6-ch-align.html#sec:merge-bamfiles"><i class="fa fa-check"></i><b>6.5</b> Merge bamfiles</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="7-ch-merge-bamfiles.html"><a href="7-ch-merge-bamfiles.html"><i class="fa fa-check"></i><b>7</b> Merge bamfiles</a></li>
-<li class="chapter" data-level="8" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html"><i class="fa fa-check"></i><b>8</b> GATK pre-processing</a><ul>
-<li class="chapter" data-level="8.1" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html#splitncigarreads"><i class="fa fa-check"></i><b>8.1</b> SplitNCigarReads</a></li>
-<li class="chapter" data-level="8.2" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html#base-recalibration"><i class="fa fa-check"></i><b>8.2</b> Base recalibration</a></li>
+<li class="chapter" data-level="7" data-path="7-ch-gatk-prep.html"><a href="7-ch-gatk-prep.html"><i class="fa fa-check"></i><b>7</b> GATK pre-processing</a><ul>
+<li class="chapter" data-level="7.1" data-path="7-ch-gatk-prep.html"><a href="7-ch-gatk-prep.html#splitncigarreads"><i class="fa fa-check"></i><b>7.1</b> SplitNCigarReads</a></li>
+<li class="chapter" data-level="7.2" data-path="7-ch-gatk-prep.html"><a href="7-ch-gatk-prep.html#base-recalibration"><i class="fa fa-check"></i><b>7.2</b> Base recalibration</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html"><i class="fa fa-check"></i><b>9</b> Variant calling</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-mutect2"><i class="fa fa-check"></i><b>9.1</b> Call with MuTect2</a></li>
-<li class="chapter" data-level="9.2" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-samtools-varscan2"><i class="fa fa-check"></i><b>9.2</b> Call with Samtools + VarScan2</a></li>
-<li class="chapter" data-level="9.3" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-vardict"><i class="fa fa-check"></i><b>9.3</b> Call with VarDict</a></li>
-<li class="chapter" data-level="9.4" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#annotate-variants"><i class="fa fa-check"></i><b>9.4</b> Annotate variants</a></li>
-<li class="chapter" data-level="9.5" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#indels-km"><i class="fa fa-check"></i><b>9.5</b> Targeted INDEL calling with <code>km</code> algorithm</a></li>
+<li class="chapter" data-level="8" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html"><i class="fa fa-check"></i><b>8</b> Variant calling</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html#call-with-mutect2"><i class="fa fa-check"></i><b>8.1</b> Call with MuTect2</a></li>
+<li class="chapter" data-level="8.2" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html#call-with-samtools-varscan2"><i class="fa fa-check"></i><b>8.2</b> Call with Samtools + VarScan2</a></li>
+<li class="chapter" data-level="8.3" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html#call-with-vardict"><i class="fa fa-check"></i><b>8.3</b> Call with VarDict</a></li>
+<li class="chapter" data-level="8.4" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html#annotate-variants"><i class="fa fa-check"></i><b>8.4</b> Annotate variants</a></li>
+<li class="chapter" data-level="8.5" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html#indels-km"><i class="fa fa-check"></i><b>8.5</b> Targeted INDEL calling with <code>km</code> algorithm</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html"><i class="fa fa-check"></i><b>10</b> Standardise output of variants</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html#superfreq-to-combine-time-course-mutations-for-one-patient"><i class="fa fa-check"></i><b>10.1</b> superFreq to combine time-course mutations for one patient</a></li>
+<li class="chapter" data-level="9" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html"><i class="fa fa-check"></i><b>9</b> Standardise output of variants</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html#superfreq-to-combine-time-course-mutations-for-one-patient"><i class="fa fa-check"></i><b>9.1</b> superFreq to combine time-course mutations for one patient</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-ch-fusions.html"><a href="11-ch-fusions.html"><i class="fa fa-check"></i><b>11</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
-<li class="chapter" data-level="12" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html"><i class="fa fa-check"></i><b>12</b> Analyse time-course mutations with superFreq</a><ul>
-<li class="chapter" data-level="12.1" data-path="12-ch-superfreq.html"><a href="12-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>12.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
+<li class="chapter" data-level="10" data-path="10-ch-fusions.html"><a href="10-ch-fusions.html"><i class="fa fa-check"></i><b>10</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
+<li class="chapter" data-level="11" data-path="11-ch-superfreq.html"><a href="11-ch-superfreq.html"><i class="fa fa-check"></i><b>11</b> Analyse time-course mutations with superFreq</a><ul>
+<li class="chapter" data-level="11.1" data-path="11-ch-superfreq.html"><a href="11-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>11.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="13-ch-refer.html"><a href="13-ch-refer.html"><i class="fa fa-check"></i><b>13</b> References</a></li>
+<li class="chapter" data-level="12" data-path="12-ch-refer.html"><a href="12-ch-refer.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></li>
 
@@ -192,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ch:align" class="section level1">
 <h1><span class="header-section-number">6</span> Alignement, Read Groups, Mark duplicates</h1>
-<p>Once the <em>fastq</em> files are ready to be processed we can align them with <em>STAR</em>. <a href="http://subread.sourceforge.net/">Subread/Rsubread</a> is another widely used RNA-Seq aligner. The reason why I initially choose <em>STAR</em> over <em>Subread</em> was simply due to the fact that <em>STAR</em> can generate specific output for chimeric reads that can be directly used with <a href="https://github.com/STAR-Fusion/STAR-Fusion/wiki">STAR-Fusion</a> to analyse gene fusions (see more in Section <a href="11-ch-fusions.html#ch:fusions">11</a>). Also, <em>STAR</em> is suggested in the the <a href="https://gatkforums.broadinstitute.org/gatk/discussion/3892/the-gatk-best-practices-for-variant-calling-on-rnaseq-in-full-detail">GATK Best Practices to call variants in RNA-Seq</a>.</p>
+<p>Once the <em>fastq</em> files are ready to be processed we can align them with <em>STAR</em>. <a href="http://subread.sourceforge.net/">Subread/Rsubread</a> is another widely used RNA-Seq aligner. The reason why I initially choose <em>STAR</em> over <em>Subread</em> was simply due to the fact that <em>STAR</em> can generate specific output for chimeric reads that can be directly used with <a href="https://github.com/STAR-Fusion/STAR-Fusion/wiki">STAR-Fusion</a> to analyse gene fusions (see more in Section <a href="10-ch-fusions.html#ch:fusions">10</a>). Also, <em>STAR</em> is suggested in the the <a href="https://gatkforums.broadinstitute.org/gatk/discussion/3892/the-gatk-best-practices-for-variant-calling-on-rnaseq-in-full-detail">GATK Best Practices to call variants in RNA-Seq</a>.</p>
 <div id="create-star-index" class="section level2">
 <h2><span class="header-section-number">6.1</span> Create <code>STAR</code> index</h2>
 <p>STAR requires an index for the reference genome that will be used for the alignment and fusion calling steps. Below, I show my way of creating the index!</p>
@@ -311,7 +310,7 @@ SRR1608907 </code></pre>
 <ol style="list-style-type: decimal">
 <li>Path to <strong>aligned bamfile</strong>;</li>
 <li><code>SampleName</code>. This is the name of the sample applied to the <code>RGID</code> and <code>RGPU</code> fields below.</li>
-<li><code>SampleName of the run</code>. If a sample was sequenced across different lanes you need to set lane-specific read groups to each separate bamfile (e.g. SampleName_L1, SampleName_L2). This sample name will be used for the fields <code>RGLB</code> and <code>RGSM</code> in the <code>AddOrReplaceReadGroups</code> groups below. See Chapter @(ch:merge-bamfiles) for merging bamfiles.</li>
+<li><code>SampleName of the run</code>. If a sample was sequenced across different lanes you need to set lane-specific read groups to each separate bamfile (e.g. SampleName_L1, SampleName_L2). This sample name will be used for the fields <code>RGLB</code> and <code>RGSM</code> in the <code>AddOrReplaceReadGroups</code> groups below. See Section @(sec:merge-bamfiles) for merging bamfiles.</li>
 </ol>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Picard tool function to add read groups to a bamfile</span>
 <span class="ex">AddOrReplaceReadGroups</span> \
@@ -322,7 +321,7 @@ SRR1608907 </code></pre>
         RGLB=SRR1608907_L1 \
         RGPL=<span class="st">&quot;illumina&quot;</span> \
         RGSM=SRR1608907_L1</code></pre>
-<p>Figure <a href="6-ch-align.html#fig:read-group">6.1</a> is a graphic example of adding read groups to separate files. In the merged bamfile each reads will have an identification for which lane they came from and this information is used in the GATK Base Recalibration step discussed in Section <a href="8-ch-gatk-prep.html#ch:gatk-prep">8</a>.</p>
+<p>Figure <a href="6-ch-align.html#fig:read-group">6.1</a> is a graphic example of adding read groups to separate files. In the merged bamfile each reads will have an identification for which lane they came from and this information is used in the GATK Base Recalibration step discussed in Section <a href="7-ch-gatk-prep.html#ch:gatk-prep">7</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:read-group"></span>
 <img src="figures/read-group-1.png" alt="Adding read group before merging across lanes." width="100%" />
 <p class="caption">
@@ -333,8 +332,10 @@ Figure 6.1: Adding read group before merging across lanes.
 <p>This time <em>MultiQC</em> will give us a summary output also of the fragment distributions and gene counts if all the output files are stored within the <code>star_2pass</code> folder.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ./results/star_2pass --interactive -n <span class="st">&quot;STAR_2passQC&quot;</span> -o ../results</code></pre>
 </div>
-<div id="add-pictures-read-group-and-pipeline" class="section level2">
-<h2><span class="header-section-number">6.5</span> Add pictures: read group and pipeline</h2>
+<div id="sec:merge-bamfiles" class="section level2">
+<h2><span class="header-section-number">6.5</span> Merge bamfiles</h2>
+<p>In some cases the sequenced reads from one sample can be sequenced across different lanes and the aligned bamfiles need to be merged. <code>sambamba merge</code> can be used for this. I created a wrapper function for it even though it assumes that the files from the same sample have a common <em>SampleName</em>. The function will merge together all bamfiles containing <em>SampleName</em>.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">../functions/merge_runs.sh</span> SampleName ./star_2pass</code></pre>
 
 </div>
 </div>
@@ -344,7 +345,7 @@ Figure 6.1: Adding read group before merging across lanes.
         </div>
       </div>
 <a href="5-ch-fastqc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="7-ch-merge-bamfiles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="7-ch-gatk-prep.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
