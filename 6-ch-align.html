@@ -310,7 +310,7 @@ SRR1608907 </code></pre>
 <ol style="list-style-type: decimal">
 <li>Path to <strong>aligned bamfile</strong>;</li>
 <li><code>SampleName</code>. This is the name of the sample applied to the <code>RGID</code> and <code>RGPU</code> fields below.</li>
-<li><code>SampleName of the run</code>. If a sample was sequenced across different lanes you need to set lane-specific read groups to each separate bamfile (e.g. SampleName_L1, SampleName_L2). This sample name will be used for the fields <code>RGLB</code> and <code>RGSM</code> in the <code>AddOrReplaceReadGroups</code> groups below. See Section @(sec:merge-bamfiles) for merging bamfiles.</li>
+<li><code>SampleName of the run</code>. If a sample was sequenced across different lanes you need to set lane-specific read groups to each separate bamfile (e.g. SampleName_L1, SampleName_L2). This sample name will be used for the fields <code>RGLB</code> and <code>RGSM</code> in the <code>AddOrReplaceReadGroups</code> groups below. See Section <a href="6-ch-align.html#sec:merge-bamfiles">6.5</a> for merging bamfiles.</li>
 </ol>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># Picard tool function to add read groups to a bamfile</span>
 <span class="ex">AddOrReplaceReadGroups</span> \
@@ -334,8 +334,8 @@ Figure 6.1: Adding read group before merging across lanes.
 </div>
 <div id="sec:merge-bamfiles" class="section level2">
 <h2><span class="header-section-number">6.5</span> Merge bamfiles</h2>
-<p>In some cases the sequenced reads from one sample can be sequenced across different lanes and the aligned bamfiles need to be merged. <code>sambamba merge</code> can be used for this. I created a wrapper function for it even though it assumes that the files from the same sample have a common <em>SampleName</em>. The function will merge together all bamfiles containing <em>SampleName</em>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">../functions/merge_runs.sh</span> SampleName ./star_2pass</code></pre>
+<p>In some cases the sequenced reads from one sample can be sequenced across different lanes and the aligned bamfiles need to be merged. <code>sambamba merge</code> can be used for this. I created a wrapper function for it even though it assumes that the files from the same sample have a common <em>SampleName</em>. The function will merge together all bamfiles containing <em>SampleName</em> found in the <code>./star_2pass</code> directory.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">./functions/merge_runs.sh</span> SampleName ./star_2pass</code></pre>
 
 </div>
 </div>
