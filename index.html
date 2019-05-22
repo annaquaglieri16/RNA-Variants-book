@@ -141,13 +141,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html"><i class="fa fa-check"></i><b>5</b> FASTQC and adapters trimming</a><ul>
 <li class="chapter" data-level="5.1" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#parallelise-your-fastqc"><i class="fa fa-check"></i><b>5.1</b> Parallelise your <code>FASTQC</code></a></li>
 <li class="chapter" data-level="5.2" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#summarise-reports-with-multiqc"><i class="fa fa-check"></i><b>5.2</b> Summarise reports with <code>MultiQC</code></a></li>
-<li class="chapter" data-level="5.3" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#adapter-contamination-troubles-star-vs-subread"><i class="fa fa-check"></i><b>5.3</b> Adapter contamination troubles: STAR vs Subread</a></li>
+<li class="chapter" data-level="5.3" data-path="5-ch-fastqc.html"><a href="5-ch-fastqc.html#adapter-troubles-star-vs-subread"><i class="fa fa-check"></i><b>5.3</b> Adapter troubles: STAR vs Subread</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="6-ch-align.html"><a href="6-ch-align.html"><i class="fa fa-check"></i><b>6</b> Alignement, Read Groups, Mark duplicates</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-ch-align.html"><a href="6-ch-align.html#create-star-index"><i class="fa fa-check"></i><b>6.1</b> Create <code>STAR</code> index</a></li>
 <li class="chapter" data-level="6.2" data-path="6-ch-align.html"><a href="6-ch-align.html#star-1pass"><i class="fa fa-check"></i><b>6.2</b> STAR-1pass</a></li>
 <li class="chapter" data-level="6.3" data-path="6-ch-align.html"><a href="6-ch-align.html#star-2pass"><i class="fa fa-check"></i><b>6.3</b> STAR-2pass</a></li>
 <li class="chapter" data-level="6.4" data-path="6-ch-align.html"><a href="6-ch-align.html#sec:post-align"><i class="fa fa-check"></i><b>6.4</b> Details about post-alignment functions</a></li>
+<li class="chapter" data-level="6.5" data-path="6-ch-align.html"><a href="6-ch-align.html#add-pictures-read-group-and-pipeline"><i class="fa fa-check"></i><b>6.5</b> Add pictures: read group and pipeline</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-ch-merge-bamfiles.html"><a href="7-ch-merge-bamfiles.html"><i class="fa fa-check"></i><b>7</b> Merge bamfiles</a></li>
 <li class="chapter" data-level="8" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html"><i class="fa fa-check"></i><b>8</b> GATK pre-processing</a><ul>
@@ -225,6 +226,13 @@ Figure 1.1: Overview of the variant calling pipeline that I used used for severa
 <li><code>VEP</code> <span class="citation">(McLaren et al. <a href="13-ch-refer.html#ref-McLaren2016-lv">2016</a>)</span></li>
 <li><a href="https://annaquaglieri16.github.io/varikondo/index.html"><code>varikondo</code></a></li>
 </ul>
+<p>The pre-processing steps in Figure <a href="index.html#fig:overview">1.1</a> are also summarised in Figure <a href="index.html#fig:prep">1.2</a> and discussed in the sections below. The majority of the pre-processing steps are taken from the <a href="https://software.broadinstitute.org/gatk/documentation/article.php?id=3891"><code>GATK best practices for RNA-Seq variant calling</code></a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:prep"></span>
+<img src="figures/prep-1.png" alt="Bamfile pre-processing." width="100%" />
+<p class="caption">
+Figure 1.2: Bamfile pre-processing.
+</p>
+</div>
 </div>
 <div id="disclaimer" class="section level2">
 <h2><span class="header-section-number">1.2</span> Disclaimer</h2>
