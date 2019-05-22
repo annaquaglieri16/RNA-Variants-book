@@ -223,34 +223,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 --readFilesIn <span class="va">$FQ1</span> <span class="va">$FQ2</span> --runThreadN 27 --chimSegmentMin 10 --readFilesCommand zcat --alignSJoverhangMin 8 --outBAMcompression 10 --alignSJDBoverhangMin 1 --limitBAMsortRAM 85741557872 --outFilterMismatchNmax 999 --alignIntronMin 20 --alignIntronMax 200000 --alignMatesGapMax 20000 --outFileNamePrefix path_to_star_1pass/SampleName --outSAMtype BAM SortedByCoordinate --outFilterType BySJout --outFilterMultimapNmax 15</code></pre>
 <p>To see all the arguments available:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Rscript</span> ./functions/run_STAR.R --help</code></pre>
-<p>````
+<pre><code>
 Options:
-–genome_index=GENOME_INDEX
-Path to the folder with the reference genome index.</p>
-<pre><code>    --fastqfiles=FASTQFILES
-            One or two comma separated full paths to the gzipped fastq files.</code></pre>
-<p>If only one file is given STAR will consider it a SE library.</p>
-<pre><code>    --sampleName=CHARACTER
-            Name for output files. If not specified: --fastqfiles without directory and extention.
+        --genome_index=GENOME_INDEX
+                Path to the folder with the reference genome index.
 
-    --outdir=CHARACTER
-            Path to output directory. If not specified: ../STAR_align.
+        --fastqfiles=FASTQFILES
+                One or two comma separated full paths to the gzipped fastq files.
+ If only one file is given STAR will consider it a SE library.
 
-    --sjfile=CHARACTER
-            Path to output splije junction file from STAR 1-pass. Required if --STARmode &#39;2PassMulti&#39;.
+        --sampleName=CHARACTER
+                Name for output files. If not specified: --fastqfiles without directory and extention.
 
-    --STARmode=CHARACTER
-            One of: &#39;2PassMulti&#39;, &#39;2PassBasic&#39;, &#39;1Pass&#39;. For more information see the STAR manual for STAR 2-pass mode (Section 8)
+        --outdir=CHARACTER
+                Path to output directory. If not specified: ../STAR_align.
 
-    --Rrepos=RREPOS
-            Redirection to server worldwide. Need the default when installing packages without setting a mirror.
+        --sjfile=CHARACTER
+                Path to output splije junction file from STAR 1-pass. Required if --STARmode &#39;2PassMulti&#39;.
 
-    --RlibPath=RLIBPATH
-            R path to install R packages.
+        --STARmode=CHARACTER
+                One of: &#39;2PassMulti&#39;, &#39;2PassBasic&#39;, &#39;1Pass&#39;. For more information see the STAR manual for STAR 2-pass mode (Section 8)
 
-    -h, --help
-            Show this help message and exit</code></pre>
-<p>```</p>
+        --Rrepos=RREPOS
+                Redirection to server worldwide. Need the default when installing packages without setting a mirror.
+
+        --RlibPath=RLIBPATH
+                R path to install R packages.
+
+        -h, --help
+                Show this help message and exit</code></pre>
 <p>After running STAR on all the fastq files available we can collect all the splice junctions from the first pass and use them for the second pass.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># concatenate splice junctions from all samples from ran in pass1</span>
 <span class="fu">cat</span> ./results/star_1pass/*SJ.out.tab <span class="op">&gt;</span> ./results/star_1pass/combined_sj.out.tab
