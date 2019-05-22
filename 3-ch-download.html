@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="2-overview.html">
+<link rel="prev" href="2-ch-explore-mut.html">
 <link rel="next" href="4-ch-downsample.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -128,45 +128,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong><a href="./">RNA-Seq variant calling</a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Setup</a></li>
-<li class="chapter" data-level="2" data-path="2-overview.html"><a href="2-overview.html"><i class="fa fa-check"></i><b>2</b> Overview</a><ul>
-<li class="chapter" data-level="2.1" data-path="2-overview.html"><a href="2-overview.html#disclaimer"><i class="fa fa-check"></i><b>2.1</b> Disclaimer</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Setup</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#disclaimer"><i class="fa fa-check"></i><b>1.2</b> Disclaimer</a></li>
 </ul></li>
+<li class="chapter" data-level="2" data-path="2-ch-explore-mut.html"><a href="2-ch-explore-mut.html"><i class="fa fa-check"></i><b>2</b> Let your variants spark joy!</a></li>
 <li class="chapter" data-level="3" data-path="3-ch-download.html"><a href="3-ch-download.html"><i class="fa fa-check"></i><b>3</b> Download RNA-Seq data from GEO</a><ul>
 <li class="chapter" data-level="3.1" data-path="3-ch-download.html"><a href="3-ch-download.html#get-srx-sample-names"><i class="fa fa-check"></i><b>3.1</b> Get SRX sample names</a></li>
 <li class="chapter" data-level="3.2" data-path="3-ch-download.html"><a href="3-ch-download.html#create-ncbi-query"><i class="fa fa-check"></i><b>3.2</b> Create NCBI query</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-ch-downsample.html"><a href="4-ch-downsample.html"><i class="fa fa-check"></i><b>4</b> Downsampling FASTQ files</a></li>
+<li class="chapter" data-level="4" data-path="4-ch-downsample.html"><a href="4-ch-downsample.html"><i class="fa fa-check"></i><b>4</b> Downsampling FASTQ or BAM files</a></li>
 <li class="chapter" data-level="5" data-path="5-ch-input-pipe.html"><a href="5-ch-input-pipe.html"><i class="fa fa-check"></i><b>5</b> Define files and programs needed for the pipeline</a></li>
 <li class="chapter" data-level="6" data-path="6-ch-fastqc.html"><a href="6-ch-fastqc.html"><i class="fa fa-check"></i><b>6</b> FASTQC and adapters trimming</a><ul>
 <li class="chapter" data-level="6.1" data-path="6-ch-fastqc.html"><a href="6-ch-fastqc.html#parallelise-your-fastqc"><i class="fa fa-check"></i><b>6.1</b> Parallelise your <code>FASTQC</code></a></li>
 <li class="chapter" data-level="6.2" data-path="6-ch-fastqc.html"><a href="6-ch-fastqc.html#summarise-reports-with-multiqc"><i class="fa fa-check"></i><b>6.2</b> Summarise reports with <code>MultiQC</code></a></li>
+<li class="chapter" data-level="6.3" data-path="6-ch-fastqc.html"><a href="6-ch-fastqc.html#adapter-troubles-star-vs-subread"><i class="fa fa-check"></i><b>6.3</b> Adapter troubles: STAR vs Subread</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="7-ch-align.html"><a href="7-ch-align.html"><i class="fa fa-check"></i><b>7</b> Alignement, Read Groups, Mark duplicates</a><ul>
 <li class="chapter" data-level="7.1" data-path="7-ch-align.html"><a href="7-ch-align.html#create-star-index"><i class="fa fa-check"></i><b>7.1</b> Create <code>STAR</code> index</a></li>
 <li class="chapter" data-level="7.2" data-path="7-ch-align.html"><a href="7-ch-align.html#star-1pass"><i class="fa fa-check"></i><b>7.2</b> STAR-1pass</a></li>
 <li class="chapter" data-level="7.3" data-path="7-ch-align.html"><a href="7-ch-align.html#star-2pass"><i class="fa fa-check"></i><b>7.3</b> STAR-2pass</a></li>
 <li class="chapter" data-level="7.4" data-path="7-ch-align.html"><a href="7-ch-align.html#sec:post-align"><i class="fa fa-check"></i><b>7.4</b> Details about post-alignment functions</a></li>
+<li class="chapter" data-level="7.5" data-path="7-ch-align.html"><a href="7-ch-align.html#sec:merge-bamfiles"><i class="fa fa-check"></i><b>7.5</b> Merge bamfiles</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="8-ch-merge-bamfiles.html"><a href="8-ch-merge-bamfiles.html"><i class="fa fa-check"></i><b>8</b> Merge bamfiles</a></li>
-<li class="chapter" data-level="9" data-path="9-ch-gatk-prep.html"><a href="9-ch-gatk-prep.html"><i class="fa fa-check"></i><b>9</b> GATK pre-processing</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-ch-gatk-prep.html"><a href="9-ch-gatk-prep.html#splitncigarreads"><i class="fa fa-check"></i><b>9.1</b> SplitNCigarReads</a></li>
-<li class="chapter" data-level="9.2" data-path="9-ch-gatk-prep.html"><a href="9-ch-gatk-prep.html#base-recalibration"><i class="fa fa-check"></i><b>9.2</b> Base recalibration</a></li>
+<li class="chapter" data-level="8" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html"><i class="fa fa-check"></i><b>8</b> GATK pre-processing</a><ul>
+<li class="chapter" data-level="8.1" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html#splitncigarreads"><i class="fa fa-check"></i><b>8.1</b> SplitNCigarReads</a></li>
+<li class="chapter" data-level="8.2" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html#base-recalibration"><i class="fa fa-check"></i><b>8.2</b> Base recalibration</a></li>
+<li class="chapter" data-level="8.3" data-path="8-ch-gatk-prep.html"><a href="8-ch-gatk-prep.html#summary-with-multiqc"><i class="fa fa-check"></i><b>8.3</b> Summary with MultiQC</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html"><i class="fa fa-check"></i><b>10</b> Variant calling</a><ul>
-<li class="chapter" data-level="10.1" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#call-with-mutect2"><i class="fa fa-check"></i><b>10.1</b> Call with MuTect2</a></li>
-<li class="chapter" data-level="10.2" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#call-with-samtools-varscan2"><i class="fa fa-check"></i><b>10.2</b> Call with Samtools + VarScan2</a></li>
-<li class="chapter" data-level="10.3" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#call-with-vardict"><i class="fa fa-check"></i><b>10.3</b> Call with VarDict</a></li>
-<li class="chapter" data-level="10.4" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#annotate-variants"><i class="fa fa-check"></i><b>10.4</b> Annotate variants</a></li>
-<li class="chapter" data-level="10.5" data-path="10-ch-call-variants.html"><a href="10-ch-call-variants.html#indels-km"><i class="fa fa-check"></i><b>10.5</b> Targeted INDEL calling with <code>km</code> algorithm</a></li>
+<li class="chapter" data-level="9" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html"><i class="fa fa-check"></i><b>9</b> Variant calling</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-mutect2"><i class="fa fa-check"></i><b>9.1</b> Call with MuTect2</a></li>
+<li class="chapter" data-level="9.2" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-samtools-varscan2"><i class="fa fa-check"></i><b>9.2</b> Call with Samtools + VarScan2</a></li>
+<li class="chapter" data-level="9.3" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#call-with-vardict"><i class="fa fa-check"></i><b>9.3</b> Call with VarDict</a></li>
+<li class="chapter" data-level="9.4" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#annotate-variants"><i class="fa fa-check"></i><b>9.4</b> Annotate variants</a></li>
+<li class="chapter" data-level="9.5" data-path="9-ch-call-variants.html"><a href="9-ch-call-variants.html#indels-km"><i class="fa fa-check"></i><b>9.5</b> Targeted INDEL calling with <code>km</code> algorithm</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="11-ch-variants-st.html"><a href="11-ch-variants-st.html"><i class="fa fa-check"></i><b>11</b> Standardise output of variants</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-ch-variants-st.html"><a href="11-ch-variants-st.html#superfreq-to-combine-time-course-mutations-for-one-patient"><i class="fa fa-check"></i><b>11.1</b> superFreq to combine time-course mutations for one patient</a></li>
+<li class="chapter" data-level="10" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html"><i class="fa fa-check"></i><b>10</b> <code>varikondo</code> and <code>superFreq</code>: Standardise and combine variants over time</a><ul>
+<li class="chapter" data-level="10.1" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html#parse_vcf_output-read-in-your-single-sample-vcf-file-in-r"><i class="fa fa-check"></i><b>10.1</b> <code>parse_vcf_output</code>: read in your single sample VCF file in R</a></li>
+<li class="chapter" data-level="10.2" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html#superfreq-and-varikodnoimport_goi_superfreq-to-combine-snvsshort-insertions-over-time"><i class="fa fa-check"></i><b>10.2</b> <code>superFreq</code> and <code>varikodno::import_goi_superfreq</code> to combine SNVs/short insertions over time</a></li>
+<li class="chapter" data-level="10.3" data-path="10-ch-variants-st.html"><a href="10-ch-variants-st.html#import_any-combine-variants-over-time-for-any-caller"><i class="fa fa-check"></i><b>10.3</b> <code>import_any</code>: combine variants over time for any caller</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="12-ch-fusions.html"><a href="12-ch-fusions.html"><i class="fa fa-check"></i><b>12</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
-<li class="chapter" data-level="13" data-path="13-ch-superfreq.html"><a href="13-ch-superfreq.html"><i class="fa fa-check"></i><b>13</b> Analyse time-course mutations with superFreq</a><ul>
-<li class="chapter" data-level="13.1" data-path="13-ch-superfreq.html"><a href="13-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>13.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
-</ul></li>
+<li class="chapter" data-level="11" data-path="11-ch-fusions.html"><a href="11-ch-fusions.html"><i class="fa fa-check"></i><b>11</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
+<li class="chapter" data-level="12" data-path="12-ch-refer.html"><a href="12-ch-refer.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></li>
 
@@ -189,31 +192,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ch:download" class="section level1">
 <h1><span class="header-section-number">3</span> Download RNA-Seq data from GEO</h1>
-<p>We will provide an example on how to download data from GEO using the Leucegene CBF-AML RNS-Seq data uploaded at <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642" class="uri">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642</a>.
-The first step in dowloading data from GEO is to download the <code>SRA</code> files. For that we need to get <code>SRX</code> entries which each one corresponds to a sample in the RNA-Seq cohort.</p>
+<p>Here is an example on how to download data from <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO</a> using the Leucegene CBF-AML RNA-Seq data uploaded at <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642" class="uri">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642</a>.
+The first step in dowloading data from GEO is to download the <code>SRA</code> files. For that, we need to first get the <code>SRX</code> entries where each one corresponds to a specific sample in the RNA-Seq cohort. Usually, publications provide <strong>accession numbers</strong> which are used to looup data available online. At every accession number one can find several <code>SRX</code> files. Below is an example using one accession number from the <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642">Leucegene data</a>.</p>
 <div id="get-srx-sample-names" class="section level2">
 <h2><span class="header-section-number">3.1</span> Get SRX sample names</h2>
+<p>The <code>GEOquery</code> package can be used to extract <code>SRX</code> files linked to an accession number.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(GEOquery)
 <span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(knitr)
 <span class="kw">library</span>(stringr)</code></pre>
-<p>Below is an example using one accession number from the <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE49642">Leucegene data</a>.</p>
+<p>Below the accession number <strong>GSE49642</strong> is used as example.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get matrix files for every accession number</span>
 series_matrix_info &lt;-<span class="st"> </span><span class="cf">function</span>(gse){
 gsed &lt;-<span class="st"> </span><span class="kw">getGEO</span>(gse,<span class="dt">GSEMatrix=</span><span class="ot">TRUE</span>)
 gse.mat &lt;-<span class="st"> </span><span class="kw">pData</span>(<span class="kw">phenoData</span>(gsed[[<span class="dv">1</span>]]))
 reduced &lt;-<span class="st"> </span>gse.mat[,<span class="kw">c</span>(<span class="st">&quot;title&quot;</span>,<span class="st">&quot;geo_accession&quot;</span>,<span class="st">&quot;relation.1&quot;</span>)]
-<span class="kw">write.csv</span>(reduced,<span class="kw">file.path</span>(<span class="st">&quot;../data&quot;</span>,<span class="kw">paste</span>(gse,<span class="st">&quot;_&quot;</span>,<span class="kw">nrow</span>(gse.mat),<span class="st">&quot;.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)),<span class="dt">row.names =</span> <span class="ot">FALSE</span>)
+<span class="kw">write.csv</span>(reduced,<span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>,<span class="kw">paste</span>(gse,<span class="st">&quot;_&quot;</span>,<span class="kw">nrow</span>(gse.mat),<span class="st">&quot;.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>)),<span class="dt">row.names =</span> <span class="ot">FALSE</span>)
 }
 
 <span class="kw">series_matrix_info</span>(<span class="st">&quot;GSE49642&quot;</span>) <span class="co"># 43 samples</span></code></pre>
-<p>Every row in Table <a href="3-ch-download.html#tab:SRX">3.1</a> contains sample names (<code>title</code>) and <code>GSM</code> accession numbers. In order to download a particular sample we need the <code>SRA</code> terms which are the names starting with: <code>SRX***</code> in the <code>relation.1</code> column. The structure of the matrix might change across different studies but you should be able to find <code>SRX</code> entries hidden somewhere in the <code>GSEMatrix</code>!</p>
+<p>Every row in Table <a href="3-ch-download.html#tab:SRX">3.1</a> contains sample names (<code>title</code>) and <code>GSM</code> numbers. In order to download a particular sample we need the <code>SRA</code> terms which are the names starting with: <code>SRX***</code> in the <code>relation.1</code> column. The structure of the matrix might change across different studies but you should be able to find <code>SRX</code> entries hidden somewhere in the <code>GSEMatrix</code>!</p>
 <pre class="sourceCode r"><code class="sourceCode r">matrix_file &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">file.path</span>(<span class="st">&quot;data&quot;</span>),<span class="dt">pattern =</span> <span class="st">&quot;GSE&quot;</span>,<span class="dt">full.names =</span> <span class="ot">TRUE</span>)
 GSEmatrix &lt;-<span class="st"> </span><span class="kw">read_csv</span>(matrix_file)
 
-<span class="kw">kable</span>(GSEmatrix[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,],<span class="dt">caption=</span><span class="st">&quot;SRX sample names.&quot;</span>)</code></pre>
+<span class="kw">kable</span>(GSEmatrix[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,],<span class="dt">caption=</span><span class="st">&quot;SRX sample names linked to the accession number GSE49642.&quot;</span>)</code></pre>
 <table>
-<caption><span id="tab:SRX">Table 3.1: </span>SRX sample names.</caption>
+<caption><span id="tab:SRX">Table 3.1: </span>SRX sample names linked to the accession number GSE49642.</caption>
 <thead>
 <tr class="header">
 <th align="left">title</th>
@@ -312,7 +316,7 @@ search_ncbi</code></pre>
           </div>
         </div>
       </div>
-<a href="2-overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="2-ch-explore-mut.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="4-ch-downsample.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

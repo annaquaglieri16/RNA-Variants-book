@@ -162,14 +162,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html#annotate-variants"><i class="fa fa-check"></i><b>8.4</b> Annotate variants</a></li>
 <li class="chapter" data-level="8.5" data-path="8-ch-call-variants.html"><a href="8-ch-call-variants.html#indels-km"><i class="fa fa-check"></i><b>8.5</b> Targeted INDEL calling with <code>km</code> algorithm</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html"><i class="fa fa-check"></i><b>9</b> Standardise output of variants</a><ul>
-<li class="chapter" data-level="9.1" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html#superfreq-to-combine-time-course-mutations-for-one-patient"><i class="fa fa-check"></i><b>9.1</b> superFreq to combine time-course mutations for one patient</a></li>
+<li class="chapter" data-level="9" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html"><i class="fa fa-check"></i><b>9</b> <code>varikondo</code> and <code>superFreq</code>: Standardise and combine variants over time</a><ul>
+<li class="chapter" data-level="9.1" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html#parse_vcf_output-read-in-your-single-sample-vcf-file-in-r"><i class="fa fa-check"></i><b>9.1</b> <code>parse_vcf_output</code>: read in your single sample VCF file in R</a></li>
+<li class="chapter" data-level="9.2" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html#superfreq-and-varikodnoimport_goi_superfreq-to-combine-snvsshort-insertions-over-time"><i class="fa fa-check"></i><b>9.2</b> <code>superFreq</code> and <code>varikodno::import_goi_superfreq</code> to combine SNVs/short insertions over time</a></li>
+<li class="chapter" data-level="9.3" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html#import_any-combine-variants-over-time-for-any-caller"><i class="fa fa-check"></i><b>9.3</b> <code>import_any</code>: combine variants over time for any caller</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="10-ch-fusions.html"><a href="10-ch-fusions.html"><i class="fa fa-check"></i><b>10</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
-<li class="chapter" data-level="11" data-path="11-ch-superfreq.html"><a href="11-ch-superfreq.html"><i class="fa fa-check"></i><b>11</b> Analyse time-course mutations with superFreq</a><ul>
-<li class="chapter" data-level="11.1" data-path="11-ch-superfreq.html"><a href="11-ch-superfreq.html#sec:mutexplore"><i class="fa fa-check"></i><b>11.1</b> Explore mutations with the <code>Mutexplore</code> Shiny app</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="12-ch-refer.html"><a href="12-ch-refer.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
+<li class="chapter" data-level="11" data-path="11-ch-refer.html"><a href="11-ch-refer.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></li>
 
@@ -192,17 +191,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ch:fastqc" class="section level1">
 <h1><span class="header-section-number">5</span> FASTQC and adapters trimming</h1>
-<p><code>fastqc</code> <span class="citation">(Andrews <a href="12-ch-refer.html#ref-Andrews2010-fk">2010</a>)</span> can be used for QC of the FASTQ files.</p>
+<p><code>fastqc</code> <span class="citation">(Andrews <a href="11-ch-refer.html#ref-Andrews2010-fk">2010</a>)</span> can be used for QC of the FASTQ files.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">fastqc</span> ../data/SRR1608610_1.fastq.gz --outdir ./data/</code></pre>
 <div id="parallelise-your-fastqc" class="section level2">
 <h2><span class="header-section-number">5.1</span> Parallelise your <code>FASTQC</code></h2>
-<p>This is just one example to run <code>fastqc</code> on several FASTQ files using <code>parallel</code> <span class="citation">(Tange, <a href="12-ch-refer.html#ref-Tange_undated-th">n.d.</a>)</span>.</p>
+<p>This is just one example to run <code>fastqc</code> on several FASTQ files using <code>parallel</code> <span class="citation">(Tange, <a href="11-ch-refer.html#ref-Tange_undated-th">n.d.</a>)</span>.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">find</span> ./data -name <span class="st">&quot;*.fastq.gz&quot;</span> <span class="op">&gt;</span> ./data/fastq_files.txt
 <span class="fu">cat</span> ./data/fastq_files.txt <span class="kw">|</span> <span class="ex">parallel</span> -j 2 <span class="st">&quot;fastqc {} --outdir ./data&quot;</span></code></pre>
 </div>
 <div id="summarise-reports-with-multiqc" class="section level2">
 <h2><span class="header-section-number">5.2</span> Summarise reports with <code>MultiQC</code></h2>
-<p>I strongly suggest to have a look at <a href="http://multiqc.info/">MultiQC</a> <span class="citation">(Ewels et al. <a href="12-ch-refer.html#ref-Ewels2016-rc">2016</a>)</span> which allows you to combine together the results of multiple samples into one compact document. You can check the programs whose output is supported by <code>MultiQC</code> (loads!!).</p>
+<p>I strongly suggest to have a look at <a href="http://multiqc.info/">MultiQC</a> <span class="citation">(Ewels et al. <a href="11-ch-refer.html#ref-Ewels2016-rc">2016</a>)</span> which allows you to combine together the results of multiple samples into one compact document. You can check the programs whose output is supported by <code>MultiQC</code> (loads!!).</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ./data/ --interactive -n <span class="st">&quot;FASTQC_summary&quot;</span> -o ./data/</code></pre>
 <p>The <code>FASTQC</code> reports offer a variety of measures and one can decide about discarding some samples or doing some adapter trimming if necessary. <a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a> and <a href="https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim Galore!</a> can be used for this purpose.</p>
 </div>
