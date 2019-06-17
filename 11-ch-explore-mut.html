@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 FASTQC and adapters trimming | From FASTQ files to Variant Calling for RNA-Seq</title>
-  <meta name="description" content="5 FASTQC and adapters trimming | From FASTQ files to Variant Calling for RNA-Seq" />
+  <title>11 Let your variants spark joy! | From FASTQ files to Variant Calling for RNA-Seq</title>
+  <meta name="description" content="11 Let your variants spark joy! | From FASTQ files to Variant Calling for RNA-Seq" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 FASTQC and adapters trimming | From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta property="og:title" content="11 Let your variants spark joy! | From FASTQ files to Variant Calling for RNA-Seq" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 FASTQC and adapters trimming | From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta name="twitter:title" content="11 Let your variants spark joy! | From FASTQ files to Variant Calling for RNA-Seq" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="4-ch-input-pipe.html">
-<link rel="next" href="6-ch-align.html">
+<link rel="prev" href="10-ch-fusions.html">
+<link rel="next" href="12-ch-refer.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -189,35 +189,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:fastqc" class="section level1">
-<h1><span class="header-section-number">5</span> FASTQC and adapters trimming</h1>
-<p><code>fastqc</code> <span class="citation">(Andrews <a href="12-ch-refer.html#ref-Andrews2010-fk">2010</a>)</span> can be used for QC of the FASTQ files.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">fastqc</span> ../data/SRR1608610_1.fastq.gz --outdir ./data/</code></pre>
-<div id="parallelise-your-fastqc" class="section level2">
-<h2><span class="header-section-number">5.1</span> Parallelise your <code>FASTQC</code></h2>
-<p>This is just one example to run <code>fastqc</code> on several FASTQ files using <code>parallel</code> <span class="citation">(Tange, <a href="12-ch-refer.html#ref-Tange_undated-th">n.d.</a>)</span>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">find</span> ./data -name <span class="st">&quot;*.fastq.gz&quot;</span> <span class="op">&gt;</span> ./data/fastq_files.txt
-<span class="fu">cat</span> ./data/fastq_files.txt <span class="kw">|</span> <span class="ex">parallel</span> -j 2 <span class="st">&quot;fastqc {} --outdir ./data&quot;</span></code></pre>
-</div>
-<div id="summarise-reports-with-multiqc" class="section level2">
-<h2><span class="header-section-number">5.2</span> Summarise reports with <code>MultiQC</code></h2>
-<p>I strongly suggest to have a look at <a href="http://multiqc.info/">MultiQC</a> <span class="citation">(Ewels et al. <a href="12-ch-refer.html#ref-Ewels2016-rc">2016</a>)</span> which allows you to combine together the results of multiple samples into one compact document. You can check the programs whose output is supported by <code>MultiQC</code> (loads!!).</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">multiqc</span> ./data/ --interactive -n <span class="st">&quot;FASTQC_summary&quot;</span> -o ./data/</code></pre>
-<p>The <code>FASTQC</code> reports offer a variety of measures and one can decide about discarding some samples or doing some adapter trimming if necessary. <a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a> and <a href="https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim Galore!</a> can be used for this purpose.</p>
-</div>
-<div id="adapter-troubles-star-vs-subread" class="section level2">
-<h2><span class="header-section-number">5.3</span> Adapter troubles: STAR vs Subread</h2>
-<p>I suggest looking at one of my previous analyses around <a href="https://github.com/annaquaglieri16/RNA-Seq-and-adapters--STAR-vs-Subjunc">adapters with STAR and Subread</a> since adapters can cause serious troubles with <code>STAR</code> default settings! Regarding this I strongly suggest to look at the fragment size distribution across samples once you have aligned your fatsq files. Unusual behaviour can help you spot problems with adapters/alignment steps, which I highlighted in the post. I normally use the <a href="https://broadinstitute.github.io/picard/command-line-overview.html">CollectMultipleMetrics</a> to extract fragment sizes from Paired End (PE) bamfiles. See Section <a href="6-ch-align.html#sec:post-align">6.4</a> for more details.</p>
+<div id="ch:explore-mut" class="section level1">
+<h1><span class="header-section-number">11</span> Let your variants spark joy!</h1>
+<p>Once all variants are nicely and neatly combined into data frames they can be easily explored and plotted! I created this minimal Shiny App that allows to explore a data frame of variants with some minimal column specification <a href="https://shiny.wehi.edu.au/quaglieri.a/shiny-kondo/" class="uri">https://shiny.wehi.edu.au/quaglieri.a/shiny-kondo/</a>.</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="4-ch-input-pipe.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="6-ch-align.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="10-ch-fusions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="12-ch-refer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -247,7 +230,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/05-fastqc-trimming.Rmd",
+"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/11-explore-mutations.Rmd",
 "text": "Edit"
 },
 "history": {

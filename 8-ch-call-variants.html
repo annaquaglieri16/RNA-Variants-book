@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Variant calling | From FASTQ files to Variant Calling for RNA-Seq</title>
-  <meta name="description" content="8 Variant calling | From FASTQ files to Variant Calling for RNA-Seq">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="8 Variant calling | From FASTQ files to Variant Calling for RNA-Seq" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Variant calling | From FASTQ files to Variant Calling for RNA-Seq" />
   <meta property="og:type" content="book" />
@@ -22,13 +21,13 @@
   
   
 
-<meta name="author" content="Anna Quaglieri">
+<meta name="author" content="Anna Quaglieri" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
 <link rel="prev" href="7-ch-gatk-prep.html">
@@ -168,7 +167,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="9-ch-variants-st.html"><a href="9-ch-variants-st.html#import_any-combine-variants-over-time-for-any-caller"><i class="fa fa-check"></i><b>9.3</b> <code>import_any</code>: combine variants over time for any caller</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="10-ch-fusions.html"><a href="10-ch-fusions.html"><i class="fa fa-check"></i><b>10</b> Call fusions with <code>STAR-Fusion</code> and <code>FusionInspector</code></a></li>
-<li class="chapter" data-level="11" data-path="11-ch-refer.html"><a href="11-ch-refer.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="chapter" data-level="11" data-path="11-ch-explore-mut.html"><a href="11-ch-explore-mut.html"><i class="fa fa-check"></i><b>11</b> Let your variants spark joy!</a></li>
+<li class="chapter" data-level="12" data-path="12-ch-refer.html"><a href="12-ch-refer.html"><i class="fa fa-check"></i><b>12</b> References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></li>
 
@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ch:call-variants" class="section level1">
 <h1><span class="header-section-number">8</span> Variant calling</h1>
 <p>You can perform variant calling on the whole genome or on specific regions that you can specify with a <code>.bed</code> file.
-Here we show how to call variants on specific regions of interest. The target regions were created using the gene symbols of the mutations listed in <strong>Supplemental Table 3</strong> of <span class="citation">(Lavallée et al. <a href="11-ch-refer.html#ref-Lavallee2016-sf">2016</a>)</span> and listed in <code>./data/mutations_Lavallee_2016.csv</code>. We used the hg19 inbuilt annotation of <code>Rsubread</code> to obtain the gene ranges and added 500 bp at the end and at the beginning of each gene. The final <code>bed</code> files is <code>./data/target_regions.bed</code>.</p>
+Here we show how to call variants on specific regions of interest. The target regions were created using the gene symbols of the mutations listed in <strong>Supplemental Table 3</strong> of <span class="citation">(Lavallée et al. <a href="12-ch-refer.html#ref-Lavallee2016-sf">2016</a>)</span> and listed in <code>./data/mutations_Lavallee_2016.csv</code>. We used the hg19 inbuilt annotation of <code>Rsubread</code> to obtain the gene ranges and added 500 bp at the end and at the beginning of each gene. The final <code>bed</code> files is <code>./data/target_regions.bed</code>.</p>
 <p>View all the options in the <code>./functions/call_variants.R</code> function.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">Rscript</span> ./functions/call_variants.R --help</code></pre>
 <p>Below is an example on how to call variants with <code>VarDict</code> and <code>VarScan</code> in tumour-only mode and annotate them with the <a href="https://asia.ensembl.org/info/docs/tools/vep/index.html">Variant Effect Preditor (VEP)</a>. The directory needed for VarDict can be downloaded from the software GitHub page <a href="https://github.com/AstraZeneca-NGS/VarDict" class="uri">https://github.com/AstraZeneca-NGS/VarDict</a>.</p>
@@ -242,7 +242,7 @@ Here we show how to call variants on specific regions of interest. The target re
 </div>
 <div id="indels-km" class="section level2">
 <h2><span class="header-section-number">8.5</span> Targeted INDEL calling with <code>km</code> algorithm</h2>
-<p>The <a href="https://github.com/iric-soft/km"><code>km</code> algorithm</a> <span class="citation">(Eric Olivier Audemard, Patrick Gendron, Vincent-Philippe Lavallée, Josée Hébert, Guy Sauvageau, Sébastien Lemieux <a href="11-ch-refer.html#ref-Software-km">2018</a>)</span> is one of the sofware developed for targeted INDEL calls in RNA-Seq. Calling INDELs from RNA-Seq is challenging and several tools have been published between 2017-2019 to accomplish this task. The <code>km</code> algorithm was benchmarked on the AML Leucegene and TCGA-LAML datasets.</p>
+<p>The <a href="https://github.com/iric-soft/km"><code>km</code> algorithm</a> <span class="citation">(Eric Olivier Audemard, Patrick Gendron, Vincent-Philippe Lavallée, Josée Hébert, Guy Sauvageau, Sébastien Lemieux <a href="12-ch-refer.html#ref-Software-km">2018</a>)</span> is one of the sofware developed for targeted INDEL calls in RNA-Seq. Calling INDELs from RNA-Seq is challenging and several tools have been published between 2017-2019 to accomplish this task. The <code>km</code> algorithm was benchmarked on the AML Leucegene and TCGA-LAML datasets.</p>
 <p>As shown in Figure <a href="index.html#fig:overview">1.1</a> I used it together with VarDict to create a set of INDELs calls from leukemia RNA-Seq. In my approach, I call variants with both callers and curate their ouput by checking INDELs that are called by both callers (only one calls is preserved) or by only one call. In my experience, their calls are pretty similar and I was able to call FLT3 Internal Tandem Duplications on my samples using both callers.</p>
 
 </div>
@@ -283,7 +283,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/09-Call-annotate-variants.Rmd",
+"link": "https://github.com/annaquaglieri16/RNA-seq-variant-calling/tree/master/Rmd/08-Call-annotate-variants.Rmd",
 "text": "Edit"
 },
 "history": {
